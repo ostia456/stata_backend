@@ -1,0 +1,430 @@
+{
+  "summary": {
+    "total_cells": 10692,
+    "total_missing": 866,
+    "total_missing_percentage": 8.1,
+    "columns_with_missing": 3,
+    "columns_without_missing": 9,
+    "rows_with_missing": 708,
+    "rows_without_missing": 183,
+    "rows_missing_percentage": 79.46
+  },
+  "columns": {
+    "PassengerId": {
+      "name": "PassengerId",
+      "dtype": "int64",
+      "total_rows": 891,
+      "missing_count": 0,
+      "present_count": 891,
+      "missing_percentage": 0.0,
+      "present_percentage": 100.0,
+      "missing_pattern": "no_missing",
+      "imputation_suggestion": {
+        "method": "mean",
+        "value": 446.0,
+        "description": "Distribution symétrique, imputation par la moyenne"
+      },
+      "impact": "none",
+      "severity": "none"
+    },
+    "Survived": {
+      "name": "Survived",
+      "dtype": "int64",
+      "total_rows": 891,
+      "missing_count": 0,
+      "present_count": 891,
+      "missing_percentage": 0.0,
+      "present_percentage": 100.0,
+      "missing_pattern": "no_missing",
+      "imputation_suggestion": {
+        "method": "mean",
+        "value": 0.3838383838383838,
+        "description": "Distribution symétrique, imputation par la moyenne"
+      },
+      "impact": "none",
+      "severity": "none"
+    },
+    "Pclass": {
+      "name": "Pclass",
+      "dtype": "int64",
+      "total_rows": 891,
+      "missing_count": 0,
+      "present_count": 891,
+      "missing_percentage": 0.0,
+      "present_percentage": 100.0,
+      "missing_pattern": "no_missing",
+      "imputation_suggestion": {
+        "method": "mean",
+        "value": 2.308641975308642,
+        "description": "Distribution symétrique, imputation par la moyenne"
+      },
+      "impact": "none",
+      "severity": "none"
+    },
+    "Name": {
+      "name": "Name",
+      "dtype": "str",
+      "total_rows": 891,
+      "missing_count": 0,
+      "present_count": 891,
+      "missing_percentage": 0.0,
+      "present_percentage": 100.0,
+      "missing_pattern": "no_missing",
+      "imputation_suggestion": {
+        "method": "mode",
+        "value": "Abbing, Mr. Anthony",
+        "description": "Imputation par la valeur la plus fréquente (mode)"
+      },
+      "impact": "none",
+      "severity": "none"
+    },
+    "Sex": {
+      "name": "Sex",
+      "dtype": "str",
+      "total_rows": 891,
+      "missing_count": 0,
+      "present_count": 891,
+      "missing_percentage": 0.0,
+      "present_percentage": 100.0,
+      "missing_pattern": "no_missing",
+      "imputation_suggestion": {
+        "method": "mode",
+        "value": "male",
+        "description": "Imputation par la valeur la plus fréquente (mode)"
+      },
+      "impact": "none",
+      "severity": "none"
+    },
+    "Age": {
+      "name": "Age",
+      "dtype": "float64",
+      "total_rows": 891,
+      "missing_count": 177,
+      "present_count": 714,
+      "missing_percentage": 19.87,
+      "present_percentage": 80.13,
+      "missing_pattern": "tail_missing",
+      "imputation_suggestion": {
+        "method": "mean",
+        "value": 29.69911764705882,
+        "description": "Distribution symétrique, imputation par la moyenne"
+      },
+      "impact": "medium",
+      "severity": "medium"
+    },
+    "SibSp": {
+      "name": "SibSp",
+      "dtype": "int64",
+      "total_rows": 891,
+      "missing_count": 0,
+      "present_count": 891,
+      "missing_percentage": 0.0,
+      "present_percentage": 100.0,
+      "missing_pattern": "no_missing",
+      "imputation_suggestion": {
+        "method": "median",
+        "value": 0.0,
+        "description": "Distribution asymétrique, imputation par la médiane"
+      },
+      "impact": "none",
+      "severity": "none"
+    },
+    "Parch": {
+      "name": "Parch",
+      "dtype": "int64",
+      "total_rows": 891,
+      "missing_count": 0,
+      "present_count": 891,
+      "missing_percentage": 0.0,
+      "present_percentage": 100.0,
+      "missing_pattern": "no_missing",
+      "imputation_suggestion": {
+        "method": "median",
+        "value": 0.0,
+        "description": "Distribution asymétrique, imputation par la médiane"
+      },
+      "impact": "none",
+      "severity": "none"
+    },
+    "Ticket": {
+      "name": "Ticket",
+      "dtype": "str",
+      "total_rows": 891,
+      "missing_count": 0,
+      "present_count": 891,
+      "missing_percentage": 0.0,
+      "present_percentage": 100.0,
+      "missing_pattern": "no_missing",
+      "imputation_suggestion": {
+        "method": "mode",
+        "value": "1601",
+        "description": "Imputation par la valeur la plus fréquente (mode)"
+      },
+      "impact": "none",
+      "severity": "none"
+    },
+    "Fare": {
+      "name": "Fare",
+      "dtype": "float64",
+      "total_rows": 891,
+      "missing_count": 0,
+      "present_count": 891,
+      "missing_percentage": 0.0,
+      "present_percentage": 100.0,
+      "missing_pattern": "no_missing",
+      "imputation_suggestion": {
+        "method": "median",
+        "value": 14.4542,
+        "description": "Distribution asymétrique, imputation par la médiane"
+      },
+      "impact": "none",
+      "severity": "none"
+    },
+    "Cabin": {
+      "name": "Cabin",
+      "dtype": "str",
+      "total_rows": 891,
+      "missing_count": 687,
+      "present_count": 204,
+      "missing_percentage": 77.1,
+      "present_percentage": 22.9,
+      "missing_pattern": "tail_missing",
+      "imputation_suggestion": {
+        "method": "drop_column",
+        "description": "Plus de 50% de valeurs manquantes, envisagez de supprimer la colonne"
+      },
+      "impact": "critical",
+      "severity": "critical"
+    },
+    "Embarked": {
+      "name": "Embarked",
+      "dtype": "str",
+      "total_rows": 891,
+      "missing_count": 2,
+      "present_count": 889,
+      "missing_percentage": 0.22,
+      "present_percentage": 99.78,
+      "missing_pattern": "random_missing",
+      "imputation_suggestion": {
+        "method": "mode",
+        "value": "S",
+        "description": "Imputation par la valeur la plus fréquente (mode)"
+      },
+      "impact": "very_low",
+      "severity": "low"
+    }
+  },
+  "high_missing_columns": [
+    "Cabin"
+  ],
+  "critical_missing_columns": [
+    "Cabin"
+  ],
+  "missing_correlation": {
+    "matrix": {
+      "PassengerId": {
+        "PassengerId": null,
+        "Survived": null,
+        "Pclass": null,
+        "Name": null,
+        "Sex": null,
+        "Age": null,
+        "SibSp": null,
+        "Parch": null,
+        "Ticket": null,
+        "Fare": null,
+        "Cabin": null,
+        "Embarked": null
+      },
+      "Survived": {
+        "PassengerId": null,
+        "Survived": null,
+        "Pclass": null,
+        "Name": null,
+        "Sex": null,
+        "Age": null,
+        "SibSp": null,
+        "Parch": null,
+        "Ticket": null,
+        "Fare": null,
+        "Cabin": null,
+        "Embarked": null
+      },
+      "Pclass": {
+        "PassengerId": null,
+        "Survived": null,
+        "Pclass": null,
+        "Name": null,
+        "Sex": null,
+        "Age": null,
+        "SibSp": null,
+        "Parch": null,
+        "Ticket": null,
+        "Fare": null,
+        "Cabin": null,
+        "Embarked": null
+      },
+      "Name": {
+        "PassengerId": null,
+        "Survived": null,
+        "Pclass": null,
+        "Name": null,
+        "Sex": null,
+        "Age": null,
+        "SibSp": null,
+        "Parch": null,
+        "Ticket": null,
+        "Fare": null,
+        "Cabin": null,
+        "Embarked": null
+      },
+      "Sex": {
+        "PassengerId": null,
+        "Survived": null,
+        "Pclass": null,
+        "Name": null,
+        "Sex": null,
+        "Age": null,
+        "SibSp": null,
+        "Parch": null,
+        "Ticket": null,
+        "Fare": null,
+        "Cabin": null,
+        "Embarked": null
+      },
+      "Age": {
+        "PassengerId": null,
+        "Survived": null,
+        "Pclass": null,
+        "Name": null,
+        "Sex": null,
+        "Age": 1.0,
+        "SibSp": null,
+        "Parch": null,
+        "Ticket": null,
+        "Fare": null,
+        "Cabin": 0.14411087922884747,
+        "Embarked": -0.023615744670011072
+      },
+      "SibSp": {
+        "PassengerId": null,
+        "Survived": null,
+        "Pclass": null,
+        "Name": null,
+        "Sex": null,
+        "Age": null,
+        "SibSp": null,
+        "Parch": null,
+        "Ticket": null,
+        "Fare": null,
+        "Cabin": null,
+        "Embarked": null
+      },
+      "Parch": {
+        "PassengerId": null,
+        "Survived": null,
+        "Pclass": null,
+        "Name": null,
+        "Sex": null,
+        "Age": null,
+        "SibSp": null,
+        "Parch": null,
+        "Ticket": null,
+        "Fare": null,
+        "Cabin": null,
+        "Embarked": null
+      },
+      "Ticket": {
+        "PassengerId": null,
+        "Survived": null,
+        "Pclass": null,
+        "Name": null,
+        "Sex": null,
+        "Age": null,
+        "SibSp": null,
+        "Parch": null,
+        "Ticket": null,
+        "Fare": null,
+        "Cabin": null,
+        "Embarked": null
+      },
+      "Fare": {
+        "PassengerId": null,
+        "Survived": null,
+        "Pclass": null,
+        "Name": null,
+        "Sex": null,
+        "Age": null,
+        "SibSp": null,
+        "Parch": null,
+        "Ticket": null,
+        "Fare": null,
+        "Cabin": null,
+        "Embarked": null
+      },
+      "Cabin": {
+        "PassengerId": null,
+        "Survived": null,
+        "Pclass": null,
+        "Name": null,
+        "Sex": null,
+        "Age": 0.14411087922884747,
+        "SibSp": null,
+        "Parch": null,
+        "Ticket": null,
+        "Fare": null,
+        "Cabin": 1.0,
+        "Embarked": -0.08704170753148574
+      },
+      "Embarked": {
+        "PassengerId": null,
+        "Survived": null,
+        "Pclass": null,
+        "Name": null,
+        "Sex": null,
+        "Age": -0.023615744670011072,
+        "SibSp": null,
+        "Parch": null,
+        "Ticket": null,
+        "Fare": null,
+        "Cabin": -0.08704170753148574,
+        "Embarked": 1.0
+      }
+    },
+    "strong_correlations": []
+  },
+  "recommendations": [
+    {
+      "column": "global",
+      "severity": "info",
+      "action": "nettoyer",
+      "reason": "3 colonnes ont des valeurs manquantes",
+      "details": {
+        "method": "multiple",
+        "description": "Traiter les valeurs manquantes avant l'analyse"
+      }
+    },
+    {
+      "column": "Age",
+      "severity": "medium",
+      "action": "imputer",
+      "reason": "19.87% de valeurs manquantes",
+      "details": {
+        "method": "mean",
+        "value": 29.69911764705882,
+        "description": "Distribution symétrique, imputation par la moyenne"
+      }
+    },
+    {
+      "column": "Cabin",
+      "severity": "critical",
+      "action": "supprimer la colonne",
+      "reason": "77.1% de valeurs manquantes",
+      "details": {
+        "method": "drop_column",
+        "description": "Plus de 50% de valeurs manquantes, envisagez de supprimer la colonne"
+      }
+    }
+  ],
+  "file_id": "9a84a459"
+}

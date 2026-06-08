@@ -1,0 +1,231 @@
+{
+  "has_categorical": true,
+  "columns": [
+    "Survived",
+    "Pclass",
+    "SibSp",
+    "Parch"
+  ],
+  "analysis": {
+    "Survived": {
+      "name": "Survived",
+      "dtype": "int64",
+      "total_rows": 891,
+      "valid_rows": 891,
+      "null_count": 0,
+      "null_percentage": 0.0,
+      "unique_count": 2,
+      "mode": {
+        "value": "0",
+        "count": 549,
+        "percentage": 61.62
+      },
+      "second_mode": {
+        "value": "1",
+        "count": 342,
+        "percentage": 38.38
+      },
+      "distribution": [
+        {
+          "value": "0",
+          "count": 549,
+          "percentage": 61.62
+        },
+        {
+          "value": "1",
+          "count": 342,
+          "percentage": 38.38
+        }
+      ],
+      "entropy": 0.9607,
+      "normalized_entropy": 0.9607,
+      "balance_ratio": 0.623,
+      "is_balanced": true,
+      "is_dominant": false,
+      "recommendation": "✅ Excellente variable catégorielle (classes équilibrées)"
+    },
+    "Pclass": {
+      "name": "Pclass",
+      "dtype": "int64",
+      "total_rows": 891,
+      "valid_rows": 891,
+      "null_count": 0,
+      "null_percentage": 0.0,
+      "unique_count": 3,
+      "mode": {
+        "value": "3",
+        "count": 491,
+        "percentage": 55.11
+      },
+      "second_mode": {
+        "value": "1",
+        "count": 216,
+        "percentage": 24.24
+      },
+      "distribution": [
+        {
+          "value": "3",
+          "count": 491,
+          "percentage": 55.11
+        },
+        {
+          "value": "1",
+          "count": 216,
+          "percentage": 24.24
+        },
+        {
+          "value": "2",
+          "count": 184,
+          "percentage": 20.65
+        }
+      ],
+      "entropy": 1.4393,
+      "normalized_entropy": 0.9081,
+      "balance_ratio": 0.3747,
+      "is_balanced": false,
+      "is_dominant": false,
+      "recommendation": "✅ Bonne variable catégorielle (peu de classes)"
+    },
+    "SibSp": {
+      "name": "SibSp",
+      "dtype": "int64",
+      "total_rows": 891,
+      "valid_rows": 891,
+      "null_count": 0,
+      "null_percentage": 0.0,
+      "unique_count": 7,
+      "mode": {
+        "value": "0",
+        "count": 608,
+        "percentage": 68.24
+      },
+      "second_mode": {
+        "value": "1",
+        "count": 209,
+        "percentage": 23.46
+      },
+      "distribution": [
+        {
+          "value": "0",
+          "count": 608,
+          "percentage": 68.24
+        },
+        {
+          "value": "1",
+          "count": 209,
+          "percentage": 23.46
+        },
+        {
+          "value": "2",
+          "count": 28,
+          "percentage": 3.14
+        },
+        {
+          "value": "4",
+          "count": 18,
+          "percentage": 2.02
+        },
+        {
+          "value": "3",
+          "count": 16,
+          "percentage": 1.8
+        },
+        {
+          "value": "8",
+          "count": 7,
+          "percentage": 0.79
+        },
+        {
+          "value": "5",
+          "count": 5,
+          "percentage": 0.56
+        }
+      ],
+      "entropy": 1.3386,
+      "normalized_entropy": 0.4768,
+      "balance_ratio": 0.0082,
+      "is_balanced": false,
+      "is_dominant": false,
+      "recommendation": "✅ Bonne variable catégorielle (peu de classes)"
+    },
+    "Parch": {
+      "name": "Parch",
+      "dtype": "int64",
+      "total_rows": 891,
+      "valid_rows": 891,
+      "null_count": 0,
+      "null_percentage": 0.0,
+      "unique_count": 7,
+      "mode": {
+        "value": "0",
+        "count": 678,
+        "percentage": 76.09
+      },
+      "second_mode": {
+        "value": "1",
+        "count": 118,
+        "percentage": 13.24
+      },
+      "distribution": [
+        {
+          "value": "0",
+          "count": 678,
+          "percentage": 76.09
+        },
+        {
+          "value": "1",
+          "count": 118,
+          "percentage": 13.24
+        },
+        {
+          "value": "2",
+          "count": 80,
+          "percentage": 8.98
+        },
+        {
+          "value": "5",
+          "count": 5,
+          "percentage": 0.56
+        },
+        {
+          "value": "3",
+          "count": 5,
+          "percentage": 0.56
+        },
+        {
+          "value": "4",
+          "count": 4,
+          "percentage": 0.45
+        },
+        {
+          "value": "6",
+          "count": 1,
+          "percentage": 0.11
+        }
+      ],
+      "entropy": 1.1283,
+      "normalized_entropy": 0.4019,
+      "balance_ratio": 0.0015,
+      "is_balanced": false,
+      "is_dominant": false,
+      "recommendation": "✅ Bonne variable catégorielle (peu de classes)"
+    }
+  },
+  "summary": {
+    "total_categorical_columns": 4,
+    "binary_columns": [
+      "Survived"
+    ],
+    "binary_count": 1,
+    "balanced_columns": [
+      "Survived"
+    ],
+    "balanced_count": 1,
+    "dominant_columns": [],
+    "dominant_count": 0
+  },
+  "insights": [
+    "🏷️ 'Survived' est binaire : 0 (61.6%) / autre (38.4%)"
+  ],
+  "file_id": "9a84a459"
+}

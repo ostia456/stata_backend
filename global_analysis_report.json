@@ -1,0 +1,2658 @@
+{
+  "file_id": "9a84a459",
+  "execution_time_seconds": 0.2,
+  "generated_at": "2026-06-02T16:31:06.271824",
+  "profile": {
+    "file_id": "9a84a459",
+    "basic_info": {
+      "rows": 891,
+      "columns": 12,
+      "total_cells": 10692,
+      "memory_usage_bytes": 121746,
+      "memory_usage_mb": 0.12,
+      "has_missing": true,
+      "total_missing_cells": 866,
+      "missing_percentage": 8.1
+    },
+    "column_types": {
+      "PassengerId": "numeric",
+      "Survived": "boolean",
+      "Pclass": "numeric",
+      "Name": "text",
+      "Sex": "categorical",
+      "Age": "numeric",
+      "SibSp": "numeric",
+      "Parch": "numeric",
+      "Ticket": "text",
+      "Fare": "numeric",
+      "Cabin": "text",
+      "Embarked": "categorical"
+    },
+    "column_summary": {
+      "numeric": [
+        "PassengerId",
+        "Pclass",
+        "Age",
+        "SibSp",
+        "Parch",
+        "Fare"
+      ],
+      "categorical": [
+        "Sex",
+        "Embarked"
+      ],
+      "text": [
+        "Name",
+        "Ticket",
+        "Cabin"
+      ],
+      "datetime": [],
+      "boolean": [
+        "Survived"
+      ],
+      "mixed": [],
+      "empty": []
+    },
+    "columns_detail": {
+      "PassengerId": {
+        "name": "PassengerId",
+        "detected_type": "numeric",
+        "dtype": "int64",
+        "unique_count": 891,
+        "null_count": 0,
+        "null_percentage": 0.0,
+        "memory_usage_bytes": 7260,
+        "min": 1.0,
+        "max": 891.0,
+        "mean": 446.0,
+        "median": 446.0
+      },
+      "Survived": {
+        "name": "Survived",
+        "detected_type": "boolean",
+        "dtype": "int64",
+        "unique_count": 2,
+        "null_count": 0,
+        "null_percentage": 0.0,
+        "memory_usage_bytes": 7260
+      },
+      "Pclass": {
+        "name": "Pclass",
+        "detected_type": "numeric",
+        "dtype": "int64",
+        "unique_count": 3,
+        "null_count": 0,
+        "null_percentage": 0.0,
+        "memory_usage_bytes": 7260,
+        "min": 1.0,
+        "max": 3.0,
+        "mean": 2.308641975308642,
+        "median": 3.0
+      },
+      "Name": {
+        "name": "Name",
+        "detected_type": "text",
+        "dtype": "str",
+        "unique_count": 891,
+        "null_count": 0,
+        "null_percentage": 0.0,
+        "memory_usage_bytes": 31286
+      },
+      "Sex": {
+        "name": "Sex",
+        "detected_type": "categorical",
+        "dtype": "str",
+        "unique_count": 2,
+        "null_count": 0,
+        "null_percentage": 0.0,
+        "memory_usage_bytes": 11452,
+        "top_value": "male",
+        "top_frequency": 577,
+        "unique_ratio": 0.0022
+      },
+      "Age": {
+        "name": "Age",
+        "detected_type": "numeric",
+        "dtype": "float64",
+        "unique_count": 88,
+        "null_count": 177,
+        "null_percentage": 19.87,
+        "memory_usage_bytes": 7260,
+        "min": 0.42,
+        "max": 80.0,
+        "mean": 29.69911764705882,
+        "median": 28.0
+      },
+      "SibSp": {
+        "name": "SibSp",
+        "detected_type": "numeric",
+        "dtype": "int64",
+        "unique_count": 7,
+        "null_count": 0,
+        "null_percentage": 0.0,
+        "memory_usage_bytes": 7260,
+        "min": 0.0,
+        "max": 8.0,
+        "mean": 0.5230078563411896,
+        "median": 0.0
+      },
+      "Parch": {
+        "name": "Parch",
+        "detected_type": "numeric",
+        "dtype": "int64",
+        "unique_count": 7,
+        "null_count": 0,
+        "null_percentage": 0.0,
+        "memory_usage_bytes": 7260,
+        "min": 0.0,
+        "max": 6.0,
+        "mean": 0.38159371492704824,
+        "median": 0.0
+      },
+      "Ticket": {
+        "name": "Ticket",
+        "detected_type": "text",
+        "dtype": "str",
+        "unique_count": 681,
+        "null_count": 0,
+        "null_percentage": 0.0,
+        "memory_usage_bytes": 13275
+      },
+      "Fare": {
+        "name": "Fare",
+        "detected_type": "numeric",
+        "dtype": "float64",
+        "unique_count": 248,
+        "null_count": 0,
+        "null_percentage": 0.0,
+        "memory_usage_bytes": 7260,
+        "min": 0.0,
+        "max": 512.3292,
+        "mean": 32.204207968574636,
+        "median": 14.4542
+      },
+      "Cabin": {
+        "name": "Cabin",
+        "detected_type": "text",
+        "dtype": "str",
+        "unique_count": 147,
+        "null_count": 687,
+        "null_percentage": 77.1,
+        "memory_usage_bytes": 8104
+      },
+      "Embarked": {
+        "name": "Embarked",
+        "detected_type": "categorical",
+        "dtype": "str",
+        "unique_count": 3,
+        "null_count": 2,
+        "null_percentage": 0.22,
+        "memory_usage_bytes": 8261,
+        "top_value": "S",
+        "top_frequency": 644,
+        "unique_ratio": 0.0034
+      }
+    },
+    "memory_info": {
+      "total_mb": 0.12,
+      "by_type": {
+        "int64": {
+          "columns": 5,
+          "memory_bytes": 35772,
+          "memory_mb": 0.03
+        },
+        "float64": {
+          "columns": 2,
+          "memory_bytes": 14388,
+          "memory_mb": 0.01
+        },
+        "object": {
+          "columns": 5,
+          "memory_bytes": 71850,
+          "memory_mb": 0.07
+        }
+      },
+      "per_column": {
+        "PassengerId": 0.0069,
+        "Survived": 0.0069,
+        "Pclass": 0.0069,
+        "Name": 0.0298,
+        "Sex": 0.0109,
+        "Age": 0.0069,
+        "SibSp": 0.0069,
+        "Parch": 0.0069,
+        "Ticket": 0.0127,
+        "Fare": 0.0069,
+        "Cabin": 0.0077,
+        "Embarked": 0.0079
+      }
+    },
+    "sample_data": {
+      "n_rows": 5,
+      "data": {
+        "PassengerId": [
+          1,
+          2,
+          3,
+          4,
+          5
+        ],
+        "Survived": [
+          0,
+          1,
+          1,
+          1,
+          0
+        ],
+        "Pclass": [
+          3,
+          1,
+          3,
+          1,
+          3
+        ],
+        "Name": [
+          "Braund, Mr. Owen Harris",
+          "Cumings, Mrs. John Bradley (Florence Briggs Thayer)",
+          "Heikkinen, Miss. Laina",
+          "Futrelle, Mrs. Jacques Heath (Lily May Peel)",
+          "Allen, Mr. William Henry"
+        ],
+        "Sex": [
+          "male",
+          "female",
+          "female",
+          "female",
+          "male"
+        ],
+        "Age": [
+          22.0,
+          38.0,
+          26.0,
+          35.0,
+          35.0
+        ],
+        "SibSp": [
+          1,
+          1,
+          0,
+          1,
+          0
+        ],
+        "Parch": [
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "Ticket": [
+          "A/5 21171",
+          "PC 17599",
+          "STON/O2. 3101282",
+          "113803",
+          "373450"
+        ],
+        "Fare": [
+          7.25,
+          71.2833,
+          7.925,
+          53.1,
+          8.05
+        ],
+        "Cabin": [
+          "nan",
+          "C85",
+          "nan",
+          "C123",
+          "nan"
+        ],
+        "Embarked": [
+          "S",
+          "C",
+          "S",
+          "S",
+          "S"
+        ]
+      }
+    }
+  },
+  "statistics": {
+    "numeric_columns": [
+      "PassengerId",
+      "Survived",
+      "Pclass",
+      "Age",
+      "SibSp",
+      "Parch",
+      "Fare"
+    ],
+    "statistics": {
+      "PassengerId": {
+        "count": 891,
+        "null_count": 0,
+        "null_percentage": 0.0,
+        "min": 1.0,
+        "max": 891.0,
+        "mean": 446.0,
+        "median": 446.0,
+        "std": 257.3538420152301,
+        "var": 66231.0,
+        "sum": 397386.0,
+        "q1": 223.5,
+        "q2": 446.0,
+        "q3": 668.5,
+        "iqr": 445.0,
+        "percentile_5": 45.5,
+        "percentile_95": 846.5,
+        "percentile_99": 882.1,
+        "skewness": 0.0,
+        "kurtosis": -1.1999999999999997,
+        "skewness_interpretation": "distribution approximativement symétrique",
+        "kurtosis_interpretation": "distribution aplatie (queues fines)"
+      },
+      "Survived": {
+        "count": 891,
+        "null_count": 0,
+        "null_percentage": 0.0,
+        "min": 0.0,
+        "max": 1.0,
+        "mean": 0.3838383838383838,
+        "median": 0.0,
+        "std": 0.4865924542648575,
+        "var": 0.23677221654749742,
+        "sum": 342.0,
+        "q1": 0.0,
+        "q2": 0.0,
+        "q3": 1.0,
+        "iqr": 1.0,
+        "percentile_5": 0.0,
+        "percentile_95": 1.0,
+        "percentile_99": 1.0,
+        "skewness": 0.4785234382949897,
+        "kurtosis": -1.775004671066304,
+        "skewness_interpretation": "distribution approximativement symétrique",
+        "kurtosis_interpretation": "distribution aplatie (queues fines)"
+      },
+      "Pclass": {
+        "count": 891,
+        "null_count": 0,
+        "null_percentage": 0.0,
+        "min": 1.0,
+        "max": 3.0,
+        "mean": 2.308641975308642,
+        "median": 3.0,
+        "std": 0.836071240977049,
+        "var": 0.6990151199889028,
+        "sum": 2057.0,
+        "q1": 2.0,
+        "q2": 3.0,
+        "q3": 3.0,
+        "iqr": 1.0,
+        "percentile_5": 1.0,
+        "percentile_95": 3.0,
+        "percentile_99": 3.0,
+        "skewness": -0.6305479068752845,
+        "kurtosis": -1.2800149715782825,
+        "skewness_interpretation": "asymétrie négative modérée",
+        "kurtosis_interpretation": "distribution aplatie (queues fines)"
+      },
+      "Age": {
+        "count": 714,
+        "null_count": 177,
+        "null_percentage": 19.87,
+        "min": 0.42,
+        "max": 80.0,
+        "mean": 29.69911764705882,
+        "median": 28.0,
+        "std": 14.526497332334042,
+        "var": 211.01912474630805,
+        "sum": 21205.17,
+        "q1": 20.125,
+        "q2": 28.0,
+        "q3": 38.0,
+        "iqr": 17.875,
+        "percentile_5": 4.0,
+        "percentile_95": 56.0,
+        "percentile_99": 65.87,
+        "skewness": 0.38910778230082693,
+        "kurtosis": 0.1782741536421022,
+        "skewness_interpretation": "distribution approximativement symétrique",
+        "kurtosis_interpretation": "distribution aplatie (queues fines)"
+      },
+      "SibSp": {
+        "count": 891,
+        "null_count": 0,
+        "null_percentage": 0.0,
+        "min": 0.0,
+        "max": 8.0,
+        "mean": 0.5230078563411896,
+        "median": 0.0,
+        "std": 1.1027434322934317,
+        "var": 1.2160430774662985,
+        "sum": 466.0,
+        "q1": 0.0,
+        "q2": 0.0,
+        "q3": 1.0,
+        "iqr": 1.0,
+        "percentile_5": 0.0,
+        "percentile_95": 3.0,
+        "percentile_99": 5.0,
+        "skewness": 3.6953517271630565,
+        "kurtosis": 17.880419726645968,
+        "skewness_interpretation": "forte asymétrie positive (queue à droite)",
+        "kurtosis_interpretation": "distribution pointue (queues épaisses)"
+      },
+      "Parch": {
+        "count": 891,
+        "null_count": 0,
+        "null_percentage": 0.0,
+        "min": 0.0,
+        "max": 6.0,
+        "mean": 0.38159371492704824,
+        "median": 0.0,
+        "std": 0.8060572211299483,
+        "var": 0.6497282437357343,
+        "sum": 340.0,
+        "q1": 0.0,
+        "q2": 0.0,
+        "q3": 0.0,
+        "iqr": 0.0,
+        "percentile_5": 0.0,
+        "percentile_95": 2.0,
+        "percentile_99": 4.0,
+        "skewness": 2.7491170471010933,
+        "kurtosis": 9.778125179021648,
+        "skewness_interpretation": "forte asymétrie positive (queue à droite)",
+        "kurtosis_interpretation": "distribution pointue (queues épaisses)"
+      },
+      "Fare": {
+        "count": 891,
+        "null_count": 0,
+        "null_percentage": 0.0,
+        "min": 0.0,
+        "max": 512.3292,
+        "mean": 32.204207968574636,
+        "median": 14.4542,
+        "std": 49.6934285971809,
+        "var": 2469.436845743116,
+        "sum": 28693.9493,
+        "q1": 7.9104,
+        "q2": 14.4542,
+        "q3": 31.0,
+        "iqr": 23.0896,
+        "percentile_5": 7.225,
+        "percentile_95": 112.07915,
+        "percentile_99": 249.00622000000035,
+        "skewness": 4.787316519674893,
+        "kurtosis": 33.39814088089868,
+        "skewness_interpretation": "forte asymétrie positive (queue à droite)",
+        "kurtosis_interpretation": "distribution pointue (queues épaisses)"
+      }
+    },
+    "summary": {
+      "PassengerId": {
+        "count": 891,
+        "mean": 446.0,
+        "std": 257.3538420152301,
+        "min": 1.0,
+        "25%": 223.5,
+        "50%": 446.0,
+        "75%": 668.5,
+        "max": 891.0
+      },
+      "Survived": {
+        "count": 891,
+        "mean": 0.3838383838383838,
+        "std": 0.4865924542648575,
+        "min": 0.0,
+        "25%": 0.0,
+        "50%": 0.0,
+        "75%": 1.0,
+        "max": 1.0
+      },
+      "Pclass": {
+        "count": 891,
+        "mean": 2.308641975308642,
+        "std": 0.836071240977049,
+        "min": 1.0,
+        "25%": 2.0,
+        "50%": 3.0,
+        "75%": 3.0,
+        "max": 3.0
+      },
+      "Age": {
+        "count": 714,
+        "mean": 29.69911764705882,
+        "std": 14.526497332334042,
+        "min": 0.42,
+        "25%": 20.125,
+        "50%": 28.0,
+        "75%": 38.0,
+        "max": 80.0
+      },
+      "SibSp": {
+        "count": 891,
+        "mean": 0.5230078563411896,
+        "std": 1.1027434322934317,
+        "min": 0.0,
+        "25%": 0.0,
+        "50%": 0.0,
+        "75%": 1.0,
+        "max": 8.0
+      },
+      "Parch": {
+        "count": 891,
+        "mean": 0.38159371492704824,
+        "std": 0.8060572211299483,
+        "min": 0.0,
+        "25%": 0.0,
+        "50%": 0.0,
+        "75%": 0.0,
+        "max": 6.0
+      },
+      "Fare": {
+        "count": 891,
+        "mean": 32.204207968574636,
+        "std": 49.6934285971809,
+        "min": 0.0,
+        "25%": 7.9104,
+        "50%": 14.4542,
+        "75%": 31.0,
+        "max": 512.3292
+      }
+    },
+    "data_types": {
+      "int64": 5,
+      "float64": 2,
+      "object": 5
+    },
+    "shape_info": {
+      "rows": 891,
+      "columns": 12,
+      "numeric_columns": 7,
+      "non_numeric_columns": 5
+    }
+  },
+  "missing_values": {
+    "summary": {
+      "total_cells": 10692,
+      "total_missing": 866,
+      "total_missing_percentage": 8.1,
+      "columns_with_missing": 3,
+      "columns_without_missing": 9,
+      "rows_with_missing": 708,
+      "rows_without_missing": 183,
+      "rows_missing_percentage": 79.46
+    },
+    "columns": {
+      "PassengerId": {
+        "name": "PassengerId",
+        "dtype": "int64",
+        "total_rows": 891,
+        "missing_count": 0,
+        "present_count": 891,
+        "missing_percentage": 0.0,
+        "present_percentage": 100.0,
+        "missing_pattern": "no_missing",
+        "imputation_suggestion": {
+          "method": "mean",
+          "value": 446.0,
+          "description": "Distribution symétrique, imputation par la moyenne"
+        },
+        "impact": "none",
+        "severity": "none"
+      },
+      "Survived": {
+        "name": "Survived",
+        "dtype": "int64",
+        "total_rows": 891,
+        "missing_count": 0,
+        "present_count": 891,
+        "missing_percentage": 0.0,
+        "present_percentage": 100.0,
+        "missing_pattern": "no_missing",
+        "imputation_suggestion": {
+          "method": "mean",
+          "value": 0.3838383838383838,
+          "description": "Distribution symétrique, imputation par la moyenne"
+        },
+        "impact": "none",
+        "severity": "none"
+      },
+      "Pclass": {
+        "name": "Pclass",
+        "dtype": "int64",
+        "total_rows": 891,
+        "missing_count": 0,
+        "present_count": 891,
+        "missing_percentage": 0.0,
+        "present_percentage": 100.0,
+        "missing_pattern": "no_missing",
+        "imputation_suggestion": {
+          "method": "mean",
+          "value": 2.308641975308642,
+          "description": "Distribution symétrique, imputation par la moyenne"
+        },
+        "impact": "none",
+        "severity": "none"
+      },
+      "Name": {
+        "name": "Name",
+        "dtype": "str",
+        "total_rows": 891,
+        "missing_count": 0,
+        "present_count": 891,
+        "missing_percentage": 0.0,
+        "present_percentage": 100.0,
+        "missing_pattern": "no_missing",
+        "imputation_suggestion": {
+          "method": "mode",
+          "value": "Abbing, Mr. Anthony",
+          "description": "Imputation par la valeur la plus fréquente (mode)"
+        },
+        "impact": "none",
+        "severity": "none"
+      },
+      "Sex": {
+        "name": "Sex",
+        "dtype": "str",
+        "total_rows": 891,
+        "missing_count": 0,
+        "present_count": 891,
+        "missing_percentage": 0.0,
+        "present_percentage": 100.0,
+        "missing_pattern": "no_missing",
+        "imputation_suggestion": {
+          "method": "mode",
+          "value": "male",
+          "description": "Imputation par la valeur la plus fréquente (mode)"
+        },
+        "impact": "none",
+        "severity": "none"
+      },
+      "Age": {
+        "name": "Age",
+        "dtype": "float64",
+        "total_rows": 891,
+        "missing_count": 177,
+        "present_count": 714,
+        "missing_percentage": 19.87,
+        "present_percentage": 80.13,
+        "missing_pattern": "tail_missing",
+        "imputation_suggestion": {
+          "method": "mean",
+          "value": 29.69911764705882,
+          "description": "Distribution symétrique, imputation par la moyenne"
+        },
+        "impact": "medium",
+        "severity": "medium"
+      },
+      "SibSp": {
+        "name": "SibSp",
+        "dtype": "int64",
+        "total_rows": 891,
+        "missing_count": 0,
+        "present_count": 891,
+        "missing_percentage": 0.0,
+        "present_percentage": 100.0,
+        "missing_pattern": "no_missing",
+        "imputation_suggestion": {
+          "method": "median",
+          "value": 0.0,
+          "description": "Distribution asymétrique, imputation par la médiane"
+        },
+        "impact": "none",
+        "severity": "none"
+      },
+      "Parch": {
+        "name": "Parch",
+        "dtype": "int64",
+        "total_rows": 891,
+        "missing_count": 0,
+        "present_count": 891,
+        "missing_percentage": 0.0,
+        "present_percentage": 100.0,
+        "missing_pattern": "no_missing",
+        "imputation_suggestion": {
+          "method": "median",
+          "value": 0.0,
+          "description": "Distribution asymétrique, imputation par la médiane"
+        },
+        "impact": "none",
+        "severity": "none"
+      },
+      "Ticket": {
+        "name": "Ticket",
+        "dtype": "str",
+        "total_rows": 891,
+        "missing_count": 0,
+        "present_count": 891,
+        "missing_percentage": 0.0,
+        "present_percentage": 100.0,
+        "missing_pattern": "no_missing",
+        "imputation_suggestion": {
+          "method": "mode",
+          "value": "1601",
+          "description": "Imputation par la valeur la plus fréquente (mode)"
+        },
+        "impact": "none",
+        "severity": "none"
+      },
+      "Fare": {
+        "name": "Fare",
+        "dtype": "float64",
+        "total_rows": 891,
+        "missing_count": 0,
+        "present_count": 891,
+        "missing_percentage": 0.0,
+        "present_percentage": 100.0,
+        "missing_pattern": "no_missing",
+        "imputation_suggestion": {
+          "method": "median",
+          "value": 14.4542,
+          "description": "Distribution asymétrique, imputation par la médiane"
+        },
+        "impact": "none",
+        "severity": "none"
+      },
+      "Cabin": {
+        "name": "Cabin",
+        "dtype": "str",
+        "total_rows": 891,
+        "missing_count": 687,
+        "present_count": 204,
+        "missing_percentage": 77.1,
+        "present_percentage": 22.9,
+        "missing_pattern": "tail_missing",
+        "imputation_suggestion": {
+          "method": "drop_column",
+          "description": "Plus de 50% de valeurs manquantes, envisagez de supprimer la colonne"
+        },
+        "impact": "critical",
+        "severity": "critical"
+      },
+      "Embarked": {
+        "name": "Embarked",
+        "dtype": "str",
+        "total_rows": 891,
+        "missing_count": 2,
+        "present_count": 889,
+        "missing_percentage": 0.22,
+        "present_percentage": 99.78,
+        "missing_pattern": "random_missing",
+        "imputation_suggestion": {
+          "method": "mode",
+          "value": "S",
+          "description": "Imputation par la valeur la plus fréquente (mode)"
+        },
+        "impact": "very_low",
+        "severity": "low"
+      }
+    },
+    "high_missing_columns": [
+      "Cabin"
+    ],
+    "critical_missing_columns": [
+      "Cabin"
+    ],
+    "missing_correlation": {
+      "matrix": {
+        "PassengerId": {
+          "PassengerId": null,
+          "Survived": null,
+          "Pclass": null,
+          "Name": null,
+          "Sex": null,
+          "Age": null,
+          "SibSp": null,
+          "Parch": null,
+          "Ticket": null,
+          "Fare": null,
+          "Cabin": null,
+          "Embarked": null
+        },
+        "Survived": {
+          "PassengerId": null,
+          "Survived": null,
+          "Pclass": null,
+          "Name": null,
+          "Sex": null,
+          "Age": null,
+          "SibSp": null,
+          "Parch": null,
+          "Ticket": null,
+          "Fare": null,
+          "Cabin": null,
+          "Embarked": null
+        },
+        "Pclass": {
+          "PassengerId": null,
+          "Survived": null,
+          "Pclass": null,
+          "Name": null,
+          "Sex": null,
+          "Age": null,
+          "SibSp": null,
+          "Parch": null,
+          "Ticket": null,
+          "Fare": null,
+          "Cabin": null,
+          "Embarked": null
+        },
+        "Name": {
+          "PassengerId": null,
+          "Survived": null,
+          "Pclass": null,
+          "Name": null,
+          "Sex": null,
+          "Age": null,
+          "SibSp": null,
+          "Parch": null,
+          "Ticket": null,
+          "Fare": null,
+          "Cabin": null,
+          "Embarked": null
+        },
+        "Sex": {
+          "PassengerId": null,
+          "Survived": null,
+          "Pclass": null,
+          "Name": null,
+          "Sex": null,
+          "Age": null,
+          "SibSp": null,
+          "Parch": null,
+          "Ticket": null,
+          "Fare": null,
+          "Cabin": null,
+          "Embarked": null
+        },
+        "Age": {
+          "PassengerId": null,
+          "Survived": null,
+          "Pclass": null,
+          "Name": null,
+          "Sex": null,
+          "Age": 1.0,
+          "SibSp": null,
+          "Parch": null,
+          "Ticket": null,
+          "Fare": null,
+          "Cabin": 0.14411087922884747,
+          "Embarked": -0.023615744670011072
+        },
+        "SibSp": {
+          "PassengerId": null,
+          "Survived": null,
+          "Pclass": null,
+          "Name": null,
+          "Sex": null,
+          "Age": null,
+          "SibSp": null,
+          "Parch": null,
+          "Ticket": null,
+          "Fare": null,
+          "Cabin": null,
+          "Embarked": null
+        },
+        "Parch": {
+          "PassengerId": null,
+          "Survived": null,
+          "Pclass": null,
+          "Name": null,
+          "Sex": null,
+          "Age": null,
+          "SibSp": null,
+          "Parch": null,
+          "Ticket": null,
+          "Fare": null,
+          "Cabin": null,
+          "Embarked": null
+        },
+        "Ticket": {
+          "PassengerId": null,
+          "Survived": null,
+          "Pclass": null,
+          "Name": null,
+          "Sex": null,
+          "Age": null,
+          "SibSp": null,
+          "Parch": null,
+          "Ticket": null,
+          "Fare": null,
+          "Cabin": null,
+          "Embarked": null
+        },
+        "Fare": {
+          "PassengerId": null,
+          "Survived": null,
+          "Pclass": null,
+          "Name": null,
+          "Sex": null,
+          "Age": null,
+          "SibSp": null,
+          "Parch": null,
+          "Ticket": null,
+          "Fare": null,
+          "Cabin": null,
+          "Embarked": null
+        },
+        "Cabin": {
+          "PassengerId": null,
+          "Survived": null,
+          "Pclass": null,
+          "Name": null,
+          "Sex": null,
+          "Age": 0.14411087922884747,
+          "SibSp": null,
+          "Parch": null,
+          "Ticket": null,
+          "Fare": null,
+          "Cabin": 1.0,
+          "Embarked": -0.08704170753148574
+        },
+        "Embarked": {
+          "PassengerId": null,
+          "Survived": null,
+          "Pclass": null,
+          "Name": null,
+          "Sex": null,
+          "Age": -0.023615744670011072,
+          "SibSp": null,
+          "Parch": null,
+          "Ticket": null,
+          "Fare": null,
+          "Cabin": -0.08704170753148574,
+          "Embarked": 1.0
+        }
+      },
+      "strong_correlations": []
+    },
+    "recommendations": [
+      {
+        "column": "global",
+        "severity": "info",
+        "action": "nettoyer",
+        "reason": "3 colonnes ont des valeurs manquantes",
+        "details": {
+          "method": "multiple",
+          "description": "Traiter les valeurs manquantes avant l'analyse"
+        }
+      },
+      {
+        "column": "Age",
+        "severity": "medium",
+        "action": "imputer",
+        "reason": "19.87% de valeurs manquantes",
+        "details": {
+          "method": "mean",
+          "value": 29.69911764705882,
+          "description": "Distribution symétrique, imputation par la moyenne"
+        }
+      },
+      {
+        "column": "Cabin",
+        "severity": "critical",
+        "action": "supprimer la colonne",
+        "reason": "77.1% de valeurs manquantes",
+        "details": {
+          "method": "drop_column",
+          "description": "Plus de 50% de valeurs manquantes, envisagez de supprimer la colonne"
+        }
+      }
+    ]
+  },
+  "correlations": {
+    "numeric_columns": [
+      "PassengerId",
+      "Survived",
+      "Pclass",
+      "Age",
+      "SibSp",
+      "Parch",
+      "Fare"
+    ],
+    "pearson": {
+      "method": "pearson",
+      "columns": [
+        "PassengerId",
+        "Survived",
+        "Pclass",
+        "Age",
+        "SibSp",
+        "Parch",
+        "Fare"
+      ],
+      "matrix": {
+        "PassengerId": {
+          "PassengerId": 1.0,
+          "Survived": -0.005,
+          "Pclass": -0.035,
+          "Age": 0.037,
+          "SibSp": -0.058,
+          "Parch": -0.002,
+          "Fare": 0.013
+        },
+        "Survived": {
+          "PassengerId": -0.005,
+          "Survived": 1.0,
+          "Pclass": -0.338,
+          "Age": -0.077,
+          "SibSp": -0.035,
+          "Parch": 0.082,
+          "Fare": 0.257
+        },
+        "Pclass": {
+          "PassengerId": -0.035,
+          "Survived": -0.338,
+          "Pclass": 1.0,
+          "Age": -0.369,
+          "SibSp": 0.083,
+          "Parch": 0.018,
+          "Fare": -0.549
+        },
+        "Age": {
+          "PassengerId": 0.037,
+          "Survived": -0.077,
+          "Pclass": -0.369,
+          "Age": 1.0,
+          "SibSp": -0.308,
+          "Parch": -0.189,
+          "Fare": 0.096
+        },
+        "SibSp": {
+          "PassengerId": -0.058,
+          "Survived": -0.035,
+          "Pclass": 0.083,
+          "Age": -0.308,
+          "SibSp": 1.0,
+          "Parch": 0.415,
+          "Fare": 0.16
+        },
+        "Parch": {
+          "PassengerId": -0.002,
+          "Survived": 0.082,
+          "Pclass": 0.018,
+          "Age": -0.189,
+          "SibSp": 0.415,
+          "Parch": 1.0,
+          "Fare": 0.216
+        },
+        "Fare": {
+          "PassengerId": 0.013,
+          "Survived": 0.257,
+          "Pclass": -0.549,
+          "Age": 0.096,
+          "SibSp": 0.16,
+          "Parch": 0.216,
+          "Fare": 1.0
+        }
+      },
+      "strong_correlations": [],
+      "summary": {
+        "max_correlation": 0.549,
+        "min_correlation": 0.002,
+        "mean_correlation": 0.159,
+        "num_strong_correlations": 0,
+        "num_very_strong_correlations": 0
+      }
+    },
+    "spearman": {
+      "method": "spearman",
+      "columns": [
+        "PassengerId",
+        "Survived",
+        "Pclass",
+        "Age",
+        "SibSp",
+        "Parch",
+        "Fare"
+      ],
+      "matrix": {
+        "PassengerId": {
+          "PassengerId": 1.0,
+          "Survived": -0.005,
+          "Pclass": -0.034,
+          "Age": 0.041,
+          "SibSp": -0.061,
+          "Parch": 0.001,
+          "Fare": -0.014
+        },
+        "Survived": {
+          "PassengerId": -0.005,
+          "Survived": 1.0,
+          "Pclass": -0.34,
+          "Age": -0.053,
+          "SibSp": 0.089,
+          "Parch": 0.138,
+          "Fare": 0.324
+        },
+        "Pclass": {
+          "PassengerId": -0.034,
+          "Survived": -0.34,
+          "Pclass": 1.0,
+          "Age": -0.362,
+          "SibSp": -0.043,
+          "Parch": -0.023,
+          "Fare": -0.688
+        },
+        "Age": {
+          "PassengerId": 0.041,
+          "Survived": -0.053,
+          "Pclass": -0.362,
+          "Age": 1.0,
+          "SibSp": -0.182,
+          "Parch": -0.254,
+          "Fare": 0.135
+        },
+        "SibSp": {
+          "PassengerId": -0.061,
+          "Survived": 0.089,
+          "Pclass": -0.043,
+          "Age": -0.182,
+          "SibSp": 1.0,
+          "Parch": 0.45,
+          "Fare": 0.447
+        },
+        "Parch": {
+          "PassengerId": 0.001,
+          "Survived": 0.138,
+          "Pclass": -0.023,
+          "Age": -0.254,
+          "SibSp": 0.45,
+          "Parch": 1.0,
+          "Fare": 0.41
+        },
+        "Fare": {
+          "PassengerId": -0.014,
+          "Survived": 0.324,
+          "Pclass": -0.688,
+          "Age": 0.135,
+          "SibSp": 0.447,
+          "Parch": 0.41,
+          "Fare": 1.0
+        }
+      },
+      "strong_correlations": [],
+      "summary": {
+        "max_correlation": 0.688,
+        "min_correlation": 0.001,
+        "mean_correlation": 0.195,
+        "num_strong_correlations": 0,
+        "num_very_strong_correlations": 0
+      }
+    },
+    "comparison": {
+      "max_difference": 0.287,
+      "mean_difference": 0.065,
+      "potential_nonlinear": [],
+      "all_differences": [
+        {
+          "var1": "Fare",
+          "var2": "SibSp",
+          "pearson": 0.16,
+          "spearman": 0.447,
+          "difference": 0.287
+        },
+        {
+          "var1": "Fare",
+          "var2": "Parch",
+          "pearson": 0.216,
+          "spearman": 0.41,
+          "difference": 0.194
+        },
+        {
+          "var1": "Fare",
+          "var2": "Pclass",
+          "pearson": -0.549,
+          "spearman": -0.688,
+          "difference": 0.139
+        },
+        {
+          "var1": "Pclass",
+          "var2": "SibSp",
+          "pearson": 0.083,
+          "spearman": -0.043,
+          "difference": 0.126
+        },
+        {
+          "var1": "Age",
+          "var2": "SibSp",
+          "pearson": -0.308,
+          "spearman": -0.182,
+          "difference": 0.126
+        },
+        {
+          "var1": "SibSp",
+          "var2": "Survived",
+          "pearson": -0.035,
+          "spearman": 0.089,
+          "difference": 0.124
+        },
+        {
+          "var1": "Fare",
+          "var2": "Survived",
+          "pearson": 0.257,
+          "spearman": 0.324,
+          "difference": 0.067
+        },
+        {
+          "var1": "Age",
+          "var2": "Parch",
+          "pearson": -0.189,
+          "spearman": -0.254,
+          "difference": 0.065
+        },
+        {
+          "var1": "Parch",
+          "var2": "Survived",
+          "pearson": 0.082,
+          "spearman": 0.138,
+          "difference": 0.056
+        },
+        {
+          "var1": "Parch",
+          "var2": "Pclass",
+          "pearson": 0.018,
+          "spearman": -0.023,
+          "difference": 0.041
+        }
+      ]
+    }
+  },
+  "normality": {
+    "columns": [
+      "PassengerId",
+      "Survived",
+      "Pclass",
+      "Age",
+      "SibSp",
+      "Parch",
+      "Fare"
+    ],
+    "results": {
+      "PassengerId": {
+        "test_statistic": 0.9548,
+        "p_value": 0.0,
+        "is_normal": false,
+        "sample_size": 891,
+        "original_size": 891,
+        "interpretation": "Distribution non normale (p-value ≤ 0.05)",
+        "recommendation": "Standardisation (z-score) pour centrer et réduire"
+      },
+      "Survived": {
+        "test_statistic": 0.6167,
+        "p_value": 0.0,
+        "is_normal": false,
+        "sample_size": 891,
+        "original_size": 891,
+        "interpretation": "Distribution non normale (p-value ≤ 0.05)",
+        "recommendation": "Standardisation (z-score) pour centrer et réduire"
+      },
+      "Pclass": {
+        "test_statistic": 0.7183,
+        "p_value": 0.0,
+        "is_normal": false,
+        "sample_size": 891,
+        "original_size": 891,
+        "interpretation": "Distribution non normale (p-value ≤ 0.05)",
+        "recommendation": "Standardisation (z-score) pour centrer et réduire"
+      },
+      "Age": {
+        "test_statistic": 0.9815,
+        "p_value": 0.0,
+        "is_normal": false,
+        "sample_size": 714,
+        "original_size": 714,
+        "interpretation": "Distribution non normale (p-value ≤ 0.05)",
+        "recommendation": "Standardisation (z-score) pour centrer et réduire"
+      },
+      "SibSp": {
+        "test_statistic": 0.513,
+        "p_value": 0.0,
+        "is_normal": false,
+        "sample_size": 891,
+        "original_size": 891,
+        "interpretation": "Distribution non normale (p-value ≤ 0.05)",
+        "recommendation": "Transformation logarithmique (log) ou racine carrée (sqrt)"
+      },
+      "Parch": {
+        "test_statistic": 0.5328,
+        "p_value": 0.0,
+        "is_normal": false,
+        "sample_size": 891,
+        "original_size": 891,
+        "interpretation": "Distribution non normale (p-value ≤ 0.05)",
+        "recommendation": "Transformation logarithmique (log) ou racine carrée (sqrt)"
+      },
+      "Fare": {
+        "test_statistic": 0.5219,
+        "p_value": 0.0,
+        "is_normal": false,
+        "sample_size": 891,
+        "original_size": 891,
+        "interpretation": "Distribution non normale (p-value ≤ 0.05)",
+        "recommendation": "Transformation logarithmique (log) ou racine carrée (sqrt)"
+      }
+    },
+    "normal_columns": [],
+    "non_normal_columns": [
+      "PassengerId",
+      "Survived",
+      "Pclass",
+      "Age",
+      "SibSp",
+      "Parch",
+      "Fare"
+    ],
+    "summary": {
+      "total_columns_tested": 7,
+      "normal_columns_count": 0,
+      "non_normal_columns_count": 7,
+      "normal_percentage": 0.0,
+      "non_normal_percentage": 100.0,
+      "most_normal_column": "PassengerId",
+      "most_normal_p_value": 0.0,
+      "least_normal_column": "PassengerId",
+      "least_normal_p_value": 0.0
+    },
+    "recommendations": [
+      {
+        "column": "PassengerId",
+        "issue": "Distribution non normale",
+        "p_value": 0.0,
+        "recommendation": "Standardisation (z-score) pour centrer et réduire",
+        "priority": "high"
+      },
+      {
+        "column": "Survived",
+        "issue": "Distribution non normale",
+        "p_value": 0.0,
+        "recommendation": "Standardisation (z-score) pour centrer et réduire",
+        "priority": "high"
+      },
+      {
+        "column": "Pclass",
+        "issue": "Distribution non normale",
+        "p_value": 0.0,
+        "recommendation": "Standardisation (z-score) pour centrer et réduire",
+        "priority": "high"
+      },
+      {
+        "column": "Age",
+        "issue": "Distribution non normale",
+        "p_value": 0.0,
+        "recommendation": "Standardisation (z-score) pour centrer et réduire",
+        "priority": "high"
+      },
+      {
+        "column": "SibSp",
+        "issue": "Distribution non normale",
+        "p_value": 0.0,
+        "recommendation": "Transformation logarithmique (log) ou racine carrée (sqrt)",
+        "priority": "high"
+      },
+      {
+        "column": "Parch",
+        "issue": "Distribution non normale",
+        "p_value": 0.0,
+        "recommendation": "Transformation logarithmique (log) ou racine carrée (sqrt)",
+        "priority": "high"
+      },
+      {
+        "column": "Fare",
+        "issue": "Distribution non normale",
+        "p_value": 0.0,
+        "recommendation": "Transformation logarithmique (log) ou racine carrée (sqrt)",
+        "priority": "high"
+      }
+    ]
+  },
+  "outliers": {
+    "columns": [
+      "PassengerId",
+      "Survived",
+      "Pclass",
+      "Age",
+      "SibSp",
+      "Parch",
+      "Fare"
+    ],
+    "results": {
+      "PassengerId": {
+        "column": "PassengerId",
+        "iqr": {
+          "method": "iqr",
+          "multiplier": 1.5,
+          "q1": 223.5,
+          "q3": 668.5,
+          "iqr": 445.0,
+          "lower_bound": -444.0,
+          "upper_bound": 1336.0,
+          "outlier_count": 0,
+          "outlier_percentage": 0.0,
+          "outlier_indices": [],
+          "outlier_values": [],
+          "total_valid_values": 891
+        },
+        "zscore": {
+          "method": "zscore",
+          "threshold": 3,
+          "mean": 446.0,
+          "std": 257.3538420152301,
+          "max_zscore": 1.7291368044688646,
+          "mean_zscore": 0.866,
+          "outlier_count": 0,
+          "outlier_percentage": 0.0,
+          "outlier_indices": [],
+          "outlier_values": [],
+          "total_valid_values": 891
+        },
+        "comparison": {
+          "iqr_only_count": 0,
+          "zscore_only_count": 0,
+          "common_count": 0,
+          "common_outliers": [],
+          "agreement_rate": 0.0
+        }
+      },
+      "Survived": {
+        "column": "Survived",
+        "iqr": {
+          "method": "iqr",
+          "multiplier": 1.5,
+          "q1": 0.0,
+          "q3": 1.0,
+          "iqr": 1.0,
+          "lower_bound": -1.5,
+          "upper_bound": 2.5,
+          "outlier_count": 0,
+          "outlier_percentage": 0.0,
+          "outlier_indices": [],
+          "outlier_values": [],
+          "total_valid_values": 891
+        },
+        "zscore": {
+          "method": "zscore",
+          "threshold": 3,
+          "mean": 0.3838383838383838,
+          "std": 0.4865924542648575,
+          "max_zscore": 1.266278609051822,
+          "mean_zscore": 0.972,
+          "outlier_count": 0,
+          "outlier_percentage": 0.0,
+          "outlier_indices": [],
+          "outlier_values": [],
+          "total_valid_values": 891
+        },
+        "comparison": {
+          "iqr_only_count": 0,
+          "zscore_only_count": 0,
+          "common_count": 0,
+          "common_outliers": [],
+          "agreement_rate": 0.0
+        }
+      },
+      "Pclass": {
+        "column": "Pclass",
+        "iqr": {
+          "method": "iqr",
+          "multiplier": 1.5,
+          "q1": 2.0,
+          "q3": 3.0,
+          "iqr": 1.0,
+          "lower_bound": 0.5,
+          "upper_bound": 4.5,
+          "outlier_count": 0,
+          "outlier_percentage": 0.0,
+          "outlier_indices": [],
+          "outlier_values": [],
+          "total_valid_values": 891
+        },
+        "zscore": {
+          "method": "zscore",
+          "threshold": 3,
+          "mean": 2.308641975308642,
+          "std": 0.836071240977049,
+          "max_zscore": 1.5652278312782746,
+          "mean_zscore": 0.911,
+          "outlier_count": 0,
+          "outlier_percentage": 0.0,
+          "outlier_indices": [],
+          "outlier_values": [],
+          "total_valid_values": 891
+        },
+        "comparison": {
+          "iqr_only_count": 0,
+          "zscore_only_count": 0,
+          "common_count": 0,
+          "common_outliers": [],
+          "agreement_rate": 0.0
+        }
+      },
+      "Age": {
+        "column": "Age",
+        "iqr": {
+          "method": "iqr",
+          "multiplier": 1.5,
+          "q1": 20.125,
+          "q3": 38.0,
+          "iqr": 17.875,
+          "lower_bound": -6.6875,
+          "upper_bound": 64.8125,
+          "outlier_count": 11,
+          "outlier_percentage": 1.54,
+          "outlier_indices": [
+            33,
+            54,
+            96,
+            116,
+            280,
+            456,
+            493,
+            630,
+            672,
+            745,
+            851
+          ],
+          "outlier_values": [
+            66.0,
+            65.0,
+            71.0,
+            70.5,
+            65.0,
+            65.0,
+            71.0,
+            80.0,
+            70.0,
+            70.0,
+            74.0
+          ],
+          "total_valid_values": 714
+        },
+        "zscore": {
+          "method": "zscore",
+          "threshold": 3,
+          "mean": 29.69911764705882,
+          "std": 14.526497332334042,
+          "max_zscore": 3.4626986259776564,
+          "mean_zscore": 0.779,
+          "outlier_count": 2,
+          "outlier_percentage": 0.28,
+          "outlier_indices": [
+            630,
+            851
+          ],
+          "outlier_values": [
+            80.0,
+            74.0
+          ],
+          "total_valid_values": 714
+        },
+        "comparison": {
+          "iqr_only_count": 9,
+          "zscore_only_count": 0,
+          "common_count": 2,
+          "common_outliers": [
+            851,
+            630
+          ],
+          "agreement_rate": 18.18
+        }
+      },
+      "SibSp": {
+        "column": "SibSp",
+        "iqr": {
+          "method": "iqr",
+          "multiplier": 1.5,
+          "q1": 0.0,
+          "q3": 1.0,
+          "iqr": 1.0,
+          "lower_bound": -1.5,
+          "upper_bound": 2.5,
+          "outlier_count": 46,
+          "outlier_percentage": 5.16,
+          "outlier_indices": [
+            7,
+            16,
+            24,
+            27,
+            50,
+            59,
+            63,
+            68,
+            71,
+            85,
+            88,
+            119,
+            159,
+            164,
+            171,
+            176,
+            180,
+            182,
+            201,
+            229,
+            233,
+            261,
+            266,
+            278,
+            324,
+            341,
+            374,
+            386,
+            409,
+            480,
+            485,
+            541,
+            542,
+            634,
+            642,
+            683,
+            686,
+            726,
+            787,
+            792,
+            813,
+            819,
+            824,
+            846,
+            850,
+            863
+          ],
+          "outlier_values": [
+            3.0,
+            4.0,
+            3.0,
+            3.0,
+            4.0,
+            5.0,
+            3.0,
+            4.0,
+            5.0,
+            3.0,
+            3.0,
+            4.0,
+            8.0,
+            4.0,
+            4.0,
+            3.0,
+            8.0,
+            4.0,
+            8.0,
+            3.0,
+            4.0,
+            4.0,
+            4.0,
+            4.0,
+            8.0,
+            3.0,
+            3.0,
+            5.0,
+            3.0,
+            5.0,
+            3.0,
+            4.0,
+            4.0,
+            3.0,
+            3.0,
+            5.0,
+            4.0,
+            3.0,
+            4.0,
+            8.0,
+            4.0,
+            3.0,
+            4.0,
+            8.0,
+            4.0,
+            8.0
+          ],
+          "total_valid_values": 891
+        },
+        "zscore": {
+          "method": "zscore",
+          "threshold": 3,
+          "mean": 0.5230078563411896,
+          "std": 1.1027434322934317,
+          "max_zscore": 6.7803551802693836,
+          "mean_zscore": 0.647,
+          "outlier_count": 30,
+          "outlier_percentage": 3.37,
+          "outlier_indices": [
+            16,
+            50,
+            59,
+            68,
+            71,
+            119,
+            159,
+            164,
+            171,
+            180,
+            182,
+            201,
+            233,
+            261,
+            266,
+            278,
+            324,
+            386,
+            480,
+            541,
+            542,
+            683,
+            686,
+            787,
+            792,
+            813,
+            824,
+            846,
+            850,
+            863
+          ],
+          "outlier_values": [
+            4.0,
+            4.0,
+            5.0,
+            4.0,
+            5.0,
+            4.0,
+            8.0,
+            4.0,
+            4.0,
+            8.0,
+            4.0,
+            8.0,
+            4.0,
+            4.0,
+            4.0,
+            4.0,
+            8.0,
+            5.0,
+            5.0,
+            4.0,
+            4.0,
+            5.0,
+            4.0,
+            4.0,
+            8.0,
+            4.0,
+            4.0,
+            8.0,
+            4.0,
+            8.0
+          ],
+          "total_valid_values": 891
+        },
+        "comparison": {
+          "iqr_only_count": 16,
+          "zscore_only_count": 0,
+          "common_count": 30,
+          "common_outliers": [
+            386,
+            261,
+            266,
+            16,
+            787,
+            278,
+            792,
+            541,
+            542,
+            159,
+            164,
+            171,
+            683,
+            813,
+            686,
+            50,
+            180,
+            182,
+            824,
+            59,
+            68,
+            324,
+            71,
+            201,
+            846,
+            850,
+            863,
+            480,
+            233,
+            119
+          ],
+          "agreement_rate": 65.22
+        }
+      },
+      "Parch": {
+        "column": "Parch",
+        "iqr": {
+          "method": "iqr",
+          "multiplier": 1.5,
+          "q1": 0.0,
+          "q3": 0.0,
+          "iqr": 0.0,
+          "lower_bound": 0.0,
+          "upper_bound": 0.0,
+          "outlier_count": 213,
+          "outlier_percentage": 23.91,
+          "outlier_indices": [
+            7,
+            8,
+            10,
+            13,
+            16,
+            24,
+            25,
+            27,
+            43,
+            50,
+            54,
+            58,
+            59,
+            63,
+            65,
+            68,
+            71,
+            78,
+            86,
+            88,
+            93,
+            97,
+            98,
+            102,
+            118,
+            119,
+            124,
+            128,
+            136,
+            140,
+            145,
+            147,
+            148,
+            153,
+            155,
+            159,
+            160,
+            164,
+            165,
+            166,
+            167,
+            171,
+            172,
+            175,
+            176,
+            180,
+            182,
+            183,
+            184,
+            188,
+            193,
+            197,
+            201,
+            205,
+            229,
+            233,
+            237,
+            247,
+            248,
+            251,
+            254,
+            255,
+            259,
+            261,
+            262,
+            266,
+            268,
+            272,
+            273,
+            278,
+            279,
+            297,
+            299,
+            305,
+            311,
+            312,
+            314,
+            318,
+            319,
+            323,
+            324,
+            328,
+            329,
+            332,
+            340,
+            341,
+            348,
+            352,
+            356,
+            360,
+            362,
+            374,
+            377,
+            381,
+            386,
+            390,
+            394,
+            407,
+            409,
+            416
+          ],
+          "outlier_values": [
+            1.0,
+            2.0,
+            1.0,
+            5.0,
+            1.0,
+            1.0,
+            5.0,
+            2.0,
+            2.0,
+            1.0,
+            1.0,
+            2.0,
+            2.0,
+            2.0,
+            1.0,
+            2.0,
+            2.0,
+            2.0,
+            3.0,
+            2.0,
+            2.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            2.0,
+            1.0,
+            1.0,
+            2.0,
+            2.0,
+            1.0,
+            2.0,
+            2.0,
+            2.0,
+            1.0,
+            2.0,
+            1.0,
+            1.0,
+            2.0,
+            1.0,
+            4.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            2.0,
+            2.0,
+            1.0,
+            2.0,
+            1.0,
+            1.0,
+            1.0,
+            2.0,
+            1.0,
+            1.0,
+            2.0,
+            2.0,
+            2.0,
+            1.0,
+            1.0,
+            2.0,
+            2.0,
+            1.0,
+            2.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            2.0,
+            1.0,
+            2.0,
+            2.0,
+            1.0,
+            1.0,
+            2.0,
+            1.0,
+            1.0,
+            2.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            2.0,
+            1.0,
+            1.0,
+            1.0,
+            4.0,
+            1.0,
+            1.0,
+            2.0,
+            2.0,
+            2.0,
+            2.0,
+            2.0,
+            1.0,
+            1.0,
+            1.0
+          ],
+          "total_valid_values": 891
+        },
+        "zscore": {
+          "method": "zscore",
+          "threshold": 3,
+          "mean": 0.38159371492704824,
+          "std": 0.8060572211299483,
+          "max_zscore": 6.970232556439293,
+          "mean_zscore": 0.72,
+          "outlier_count": 15,
+          "outlier_percentage": 1.68,
+          "outlier_indices": [
+            13,
+            25,
+            86,
+            167,
+            360,
+            437,
+            438,
+            567,
+            610,
+            638,
+            678,
+            736,
+            774,
+            858,
+            885
+          ],
+          "outlier_values": [
+            5.0,
+            5.0,
+            3.0,
+            4.0,
+            4.0,
+            3.0,
+            4.0,
+            4.0,
+            5.0,
+            5.0,
+            6.0,
+            3.0,
+            3.0,
+            3.0,
+            5.0
+          ],
+          "total_valid_values": 891
+        },
+        "comparison": {
+          "iqr_only_count": 95,
+          "zscore_only_count": 10,
+          "common_count": 5,
+          "common_outliers": [
+            167,
+            360,
+            13,
+            86,
+            25
+          ],
+          "agreement_rate": 5.0
+        }
+      },
+      "Fare": {
+        "column": "Fare",
+        "iqr": {
+          "method": "iqr",
+          "multiplier": 1.5,
+          "q1": 7.9104,
+          "q3": 31.0,
+          "iqr": 23.0896,
+          "lower_bound": -26.724,
+          "upper_bound": 65.6344,
+          "outlier_count": 116,
+          "outlier_percentage": 13.02,
+          "outlier_indices": [
+            1,
+            27,
+            31,
+            34,
+            52,
+            61,
+            62,
+            72,
+            88,
+            102,
+            118,
+            120,
+            124,
+            139,
+            151,
+            159,
+            180,
+            195,
+            201,
+            215,
+            218,
+            224,
+            230,
+            245,
+            256,
+            257,
+            258,
+            262,
+            268,
+            269,
+            275,
+            290,
+            291,
+            297,
+            299,
+            305,
+            306,
+            307,
+            310,
+            311,
+            318,
+            319,
+            324,
+            325,
+            332,
+            334,
+            336,
+            337,
+            341,
+            366,
+            369,
+            373,
+            375,
+            377,
+            380,
+            385,
+            390,
+            393,
+            412,
+            435,
+            438,
+            445,
+            453,
+            484,
+            486,
+            496,
+            498,
+            504,
+            505,
+            520,
+            527,
+            537,
+            540,
+            544,
+            550,
+            557,
+            558,
+            581,
+            585,
+            587,
+            591,
+            609,
+            627,
+            641,
+            645,
+            655,
+            659,
+            660,
+            665,
+            679,
+            681,
+            689,
+            698,
+            700,
+            708,
+            716,
+            730,
+            737,
+            741,
+            742
+          ],
+          "outlier_values": [
+            71.2833,
+            263.0,
+            146.5208,
+            82.1708,
+            76.7292,
+            80.0,
+            83.475,
+            73.5,
+            263.0,
+            77.2875,
+            247.5208,
+            73.5,
+            77.2875,
+            79.2,
+            66.6,
+            69.55,
+            69.55,
+            146.5208,
+            69.55,
+            113.275,
+            76.2917,
+            90.0,
+            83.475,
+            90.0,
+            79.2,
+            86.5,
+            512.3292,
+            79.65,
+            153.4625,
+            135.6333,
+            77.9583,
+            78.85,
+            91.0792,
+            151.55,
+            247.5208,
+            151.55,
+            110.8833,
+            108.9,
+            83.1583,
+            262.375,
+            164.8667,
+            134.5,
+            69.55,
+            135.6333,
+            153.4625,
+            133.65,
+            66.6,
+            134.5,
+            263.0,
+            75.25,
+            69.3,
+            135.6333,
+            82.1708,
+            211.5,
+            227.525,
+            73.5,
+            120.0,
+            113.275,
+            90.0,
+            120.0,
+            263.0,
+            81.8583,
+            89.1042,
+            91.0792,
+            90.0,
+            78.2667,
+            151.55,
+            86.5,
+            108.9,
+            93.5,
+            221.7792,
+            106.425,
+            71.0,
+            106.425,
+            110.8833,
+            227.525,
+            79.65,
+            110.8833,
+            79.65,
+            79.2,
+            78.2667,
+            153.4625,
+            77.9583,
+            69.3,
+            76.7292,
+            73.5,
+            113.275,
+            133.65,
+            73.5,
+            512.3292,
+            76.7292,
+            211.3375,
+            110.8833,
+            227.525,
+            151.55,
+            227.525,
+            211.3375,
+            512.3292,
+            78.85,
+            262.375
+          ],
+          "total_valid_values": 891
+        },
+        "zscore": {
+          "method": "zscore",
+          "threshold": 3,
+          "mean": 32.204207968574636,
+          "std": 49.6934285971809,
+          "max_zscore": 9.661740104981664,
+          "mean_zscore": 0.567,
+          "outlier_count": 20,
+          "outlier_percentage": 2.24,
+          "outlier_indices": [
+            27,
+            88,
+            118,
+            258,
+            299,
+            311,
+            341,
+            377,
+            380,
+            438,
+            527,
+            557,
+            679,
+            689,
+            700,
+            716,
+            730,
+            737,
+            742,
+            779
+          ],
+          "outlier_values": [
+            263.0,
+            263.0,
+            247.5208,
+            512.3292,
+            247.5208,
+            262.375,
+            263.0,
+            211.5,
+            227.525,
+            263.0,
+            221.7792,
+            227.525,
+            512.3292,
+            211.3375,
+            227.525,
+            227.525,
+            211.3375,
+            512.3292,
+            262.375,
+            211.3375
+          ],
+          "total_valid_values": 891
+        },
+        "comparison": {
+          "iqr_only_count": 81,
+          "zscore_only_count": 1,
+          "common_count": 19,
+          "common_outliers": [
+            258,
+            527,
+            27,
+            679,
+            299,
+            557,
+            689,
+            438,
+            311,
+            700,
+            716,
+            341,
+            88,
+            730,
+            737,
+            742,
+            118,
+            377,
+            380
+          ],
+          "agreement_rate": 19.0
+        }
+      }
+    },
+    "columns_with_outliers": [
+      "Age",
+      "SibSp",
+      "Parch",
+      "Fare"
+    ],
+    "columns_without_outliers": [
+      "PassengerId",
+      "Survived",
+      "Pclass"
+    ],
+    "summary": {
+      "total_columns_analyzed": 7,
+      "columns_with_outliers": 4,
+      "columns_without_outliers": 3,
+      "total_iqr_outliers": 386,
+      "total_zscore_outliers": 67,
+      "worst_column_iqr": "Parch",
+      "worst_column_iqr_count": 213,
+      "worst_column_zscore": "SibSp",
+      "worst_column_zscore_count": 30
+    },
+    "recommendations": [
+      {
+        "column": "Parch",
+        "severity": "high",
+        "action": "investiguer et traiter",
+        "iqr_outliers_pct": 23.91,
+        "zscore_outliers_pct": 1.68,
+        "suggestion": "Envisager une suppression ou transformation robuste | Essayer avec multiplier=3.0 pour identifier les outliers extrêmes"
+      },
+      {
+        "column": "Fare",
+        "severity": "high",
+        "action": "investiguer et traiter",
+        "iqr_outliers_pct": 13.02,
+        "zscore_outliers_pct": 2.24,
+        "suggestion": "Envisager une suppression ou transformation robuste | Essayer avec multiplier=3.0 pour identifier les outliers extrêmes"
+      },
+      {
+        "column": "SibSp",
+        "severity": "medium",
+        "action": "envisager un traitement",
+        "iqr_outliers_pct": 5.16,
+        "zscore_outliers_pct": 3.37,
+        "suggestion": "Envisager un clipping (bornage) ou une transformation | Essayer avec multiplier=3.0 pour identifier les outliers extrêmes"
+      },
+      {
+        "column": "Age",
+        "severity": "low",
+        "action": "surveiller",
+        "iqr_outliers_pct": 1.54,
+        "zscore_outliers_pct": 0.28,
+        "suggestion": "Conserver les outliers (peu nombreux) | Essayer avec multiplier=3.0 pour identifier les outliers extrêmes"
+      }
+    ]
+  },
+  "quality": {
+    "score": {
+      "total_score": 89.34,
+      "grade": "B",
+      "components": {
+        "completeness": {
+          "score": 83.8,
+          "weight": 0.35,
+          "weighted_score": 29.33,
+          "description": "Valeurs manquantes"
+        },
+        "integrity": {
+          "score": 90.0,
+          "weight": 0.25,
+          "weighted_score": 22.5,
+          "description": "Doublons et cohérence"
+        },
+        "consistency": {
+          "score": 100,
+          "weight": 0.2,
+          "weighted_score": 20.0,
+          "description": "Types de données"
+        },
+        "accuracy": {
+          "score": 87.53,
+          "weight": 0.2,
+          "weighted_score": 17.51,
+          "description": "Outliers et valeurs extrêmes"
+        }
+      },
+      "interpretation": "Bonne qualité - Quelques problèmes mineurs à corriger",
+      "recommendations": []
+    },
+    "report": {
+      "file_id": "9a84a459",
+      "quality_score": {
+        "total_score": 89.34,
+        "grade": "B",
+        "components": {
+          "completeness": {
+            "score": 83.8,
+            "weight": 0.35,
+            "weighted_score": 29.33,
+            "description": "Valeurs manquantes"
+          },
+          "integrity": {
+            "score": 90.0,
+            "weight": 0.25,
+            "weighted_score": 22.5,
+            "description": "Doublons et cohérence"
+          },
+          "consistency": {
+            "score": 100,
+            "weight": 0.2,
+            "weighted_score": 20.0,
+            "description": "Types de données"
+          },
+          "accuracy": {
+            "score": 87.53,
+            "weight": 0.2,
+            "weighted_score": 17.51,
+            "description": "Outliers et valeurs extrêmes"
+          }
+        },
+        "interpretation": "Bonne qualité - Quelques problèmes mineurs à corriger",
+        "recommendations": []
+      },
+      "detailed_report": {
+        "quality_score": {
+          "total_score": 89.34,
+          "grade": "B",
+          "components": {
+            "completeness": {
+              "score": 83.8,
+              "weight": 0.35,
+              "weighted_score": 29.33,
+              "description": "Valeurs manquantes"
+            },
+            "integrity": {
+              "score": 90.0,
+              "weight": 0.25,
+              "weighted_score": 22.5,
+              "description": "Doublons et cohérence"
+            },
+            "consistency": {
+              "score": 100,
+              "weight": 0.2,
+              "weighted_score": 20.0,
+              "description": "Types de données"
+            },
+            "accuracy": {
+              "score": 87.53,
+              "weight": 0.2,
+              "weighted_score": 17.51,
+              "description": "Outliers et valeurs extrêmes"
+            }
+          },
+          "interpretation": "Bonne qualité - Quelques problèmes mineurs à corriger",
+          "recommendations": []
+        },
+        "duplicates": {
+          "count": 0,
+          "percentage": 0.0
+        },
+        "column_issues": {
+          "Age": [
+            "19.9% valeurs manquantes"
+          ],
+          "Cabin": [
+            "77.1% valeurs manquantes"
+          ]
+        },
+        "columns_with_issues": 2,
+        "summary": {
+          "total_issues": 2,
+          "most_problematic_column": "Age"
+        }
+      },
+      "passing": true,
+      "summary": "Score de qualité: 89.34/100 (Grade B). 2 colonnes ont des problèmes."
+    }
+  },
+  "insights": {
+    "summary": "Le dataset contient 891 lignes et 12 colonnes. Il comprend 7 colonnes numériques et 5 colonnes catégorielles. Le taux de valeurs manquantes est de 8.1%. ",
+    "missing_insights": [
+      "ℹ️ La colonne 'Age' présente 19.9% de valeurs manquantes.",
+      "⚠️ La colonne 'Cabin' contient 77.1% de valeurs manquantes. Envisagez de la supprimer."
+    ],
+    "numeric_insights": [
+      "📊 'PassengerId' a une distribution aplatie - les valeurs sont plus dispersées que la normale.",
+      "📊 'Survived' a une distribution aplatie - les valeurs sont plus dispersées que la normale.",
+      "📊 'Pclass' présente une légère asymétrie négative (-0.63).",
+      "📊 'Pclass' a une distribution aplatie - les valeurs sont plus dispersées que la normale.",
+      "📊 'SibSp' a une forte asymétrie positive (3.70) - la majorité des valeurs sont faibles avec quelques valeurs élevées."
+    ],
+    "categorical_insights": [
+      "⚠️ 'Name' a 891 valeurs uniques - pourrait être un identifiant ou une variable texte.",
+      "🏷️ 'Sex' est binaire: male représente 64.8% des valeurs.",
+      "⚠️ 'Ticket' a 681 valeurs uniques - pourrait être un identifiant ou une variable texte.",
+      "⚠️ 'Cabin' a 147 valeurs uniques - pourrait être un identifiant ou une variable texte.",
+      "🏷️ 'Embarked' a 3 catégories différentes - bonne variable catégorielle."
+    ],
+    "correlation_insights": [
+      "🎯 La meilleure corrélation avec 'Survived' est 'Pclass' (r=0.34)"
+    ],
+    "outlier_insights": [
+      "ℹ️ 'SibSp' a 5.2% d'outliers.",
+      "⚠️ 'Parch' contient 23.9% d'outliers - valeurs extrêmes à vérifier.",
+      "⚠️ 'Fare' contient 13.0% d'outliers - valeurs extrêmes à vérifier."
+    ],
+    "quality_insights": [
+      "📈 Score de qualité global: 89.34/100 (Grade B)",
+      "✅ Les données sont de bonne qualité. Quelques nettoyages mineurs sont recommandés."
+    ],
+    "recommendations": [
+      {
+        "priority": "high",
+        "category": "missing_values",
+        "action": "Supprimer la colonne 'Cabin'",
+        "reason": "77.1% de valeurs manquantes"
+      },
+      {
+        "priority": "low",
+        "category": "identifier",
+        "action": "Considérer 'PassengerId' comme identifiant",
+        "reason": "Valeurs uniques sur chaque ligne"
+      },
+      {
+        "priority": "low",
+        "category": "identifier",
+        "action": "Considérer 'Name' comme identifiant",
+        "reason": "Valeurs uniques sur chaque ligne"
+      }
+    ],
+    "executive_summary": "Le dataset contient 891 lignes et 12 colonnes. Il comprend 7 colonnes numériques et 5 colonnes catégorielles. Le taux de valeurs manquantes est de 8.1%.  ℹ️ La colonne 'Age' présente 19.9% de valeurs manquantes. 📈 Score de qualité global: 89.34/100 (Grade B) 🎯 La meilleure corrélation avec 'Survived' est 'Pclass' (r=0.34) Action prioritaire: Supprimer la colonne 'Cabin'"
+  },
+  "summary": {
+    "dataset_size": {
+      "rows": 891,
+      "columns": 12,
+      "numeric_columns": 0
+    },
+    "data_quality": {
+      "score": 89.34,
+      "grade": "B",
+      "missing_percentage": 8.1
+    },
+    "key_findings": {
+      "best_predictor": "Pclass (r=-0.34)",
+      "most_missing_column": null,
+      "quality_interpretation": "Bonne qualité - Quelques problèmes mineurs à corriger"
+    },
+    "executive_summary": "Le dataset contient 891 lignes et 12 colonnes. Il comprend 7 colonnes numériques et 5 colonnes catégorielles. Le taux de valeurs manquantes est de 8.1%.  ℹ️ La colonne 'Age' présente 19.9% de valeurs manquantes. 📈 Score de qualité global: 89.34/100 (Grade B) 🎯 La meilleure corrélation avec 'Survived' est 'Pclass' (r=0.34) Action prioritaire: Supprimer la colonne 'Cabin'"
+  }
+}

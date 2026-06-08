@@ -1,0 +1,794 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rapport d'analyse complet - {{ filename }}</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f5f7fa;
+            color: #2c3e50;
+            line-height: 1.6;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        /* Header */
+        .header {
+            background: #2c3e50;
+            color: white;
+            padding: 40px;
+            border-radius: 15px;
+            margin-bottom: 30px;
+            page-break-after: avoid;
+        }
+
+        .header h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+            color: white;
+            font-weight: 600;
+        }
+
+        .header p {
+            color: #ecf0f1;
+            font-size: 1.1em;
+            margin-bottom: 5px;
+        }
+
+        .header .meta {
+            opacity: 0.8;
+            font-size: 0.9em;
+            color: #bdc3c7;
+        }
+        /* Cards */
+        .card {
+            background: white;
+            border-radius: 12px;
+            padding: 25px;
+            margin-bottom: 25px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            page-break-inside: avoid;
+            break-inside: avoid;
+        }
+        
+        .card h2 {
+            color: #667eea;
+            border-left: 4px solid #667eea;
+            padding-left: 15px;
+            margin-bottom: 20px;
+            font-size: 1.5em;
+        }
+        
+        .card h3 {
+            color: #555;
+            margin-bottom: 15px;
+            font-size: 1.2em;
+            margin-top: 20px;
+        }
+        
+        .card h4 {
+            color: #777;
+            margin-bottom: 10px;
+            font-size: 1.1em;
+            margin-top: 15px;
+        }
+        
+        /* Grid layouts */
+        .grid-2 {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+        }
+        
+        .grid-3 {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+        
+        .grid-4 {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 15px;
+        }
+        
+        /* Stats boxes */
+        .stat-box {
+            background: #f8f9fa;
+            padding: 15px;
+            border-radius: 10px;
+            text-align: center;
+        }
+        
+        .stat-number {
+            font-size: 2em;
+            font-weight: bold;
+            color: #667eea;
+        }
+        
+        .stat-label {
+            color: #666;
+            font-size: 0.9em;
+        }
+        
+        /* Tables */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 15px;
+            font-size: 0.9em;
+        }
+        
+        th, td {
+            padding: 10px;
+            text-align: left;
+            border-bottom: 1px solid #e0e0e0;
+        }
+        
+        th {
+            background-color: #667eea;
+            color: white;
+            font-weight: 600;
+        }
+        
+        tr:hover {
+            background-color: #f5f5f5;
+        }
+        
+        /* Badges */
+        .badge {
+            display: inline-block;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 0.8em;
+            font-weight: 600;
+        }
+        
+        .badge-success {
+            background-color: #d4edda;
+            color: #155724;
+        }
+        
+        .badge-warning {
+            background-color: #fff3cd;
+            color: #856404;
+        }
+        
+        .badge-danger {
+            background-color: #f8d7da;
+            color: #721c24;
+        }
+        
+        .badge-info {
+            background-color: #d1ecf1;
+            color: #0c5460;
+        }
+        
+        /* Progress bar */
+        .progress-bar {
+            background-color: #e0e0e0;
+            border-radius: 10px;
+            overflow: hidden;
+            height: 20px;
+        }
+        
+        .progress-fill {
+            background: linear-gradient(90deg, #667eea, #764ba2);
+            height: 100%;
+            border-radius: 10px;
+        }
+        
+        /* Insights */
+        .insight {
+            background: linear-gradient(135deg, #f5f7fa 0%, #fff 100%);
+            border-left: 4px solid #667eea;
+            padding: 15px;
+            margin: 10px 0;
+            border-radius: 8px;
+        }
+        
+        .insight-critical {
+            border-left-color: #e74c3c;
+            background: #fef5f5;
+        }
+        
+        .insight-warning {
+            border-left-color: #f39c12;
+            background: #fff8f0;
+        }
+        
+        /* Chart containers */
+        .chart-container {
+            margin: 20px 0;
+            text-align: center;
+        }
+        
+        .chart-container img {
+            max-width: 100%;
+            height: auto;
+            border: 1px solid #e0e0e0;
+            border-radius: 8px;
+        }
+        
+        /* Footer */
+        .footer {
+            text-align: center;
+            padding: 20px;
+            color: #888;
+            font-size: 0.8em;
+            border-top: 1px solid #e0e0e0;
+            margin-top: 30px;
+        }
+        
+        /* Print styles */
+        @media print {
+            body {
+                background: white;
+            }
+            .card {
+                break-inside: avoid;
+                page-break-inside: avoid;
+                box-shadow: none;
+                border: 1px solid #ddd;
+            }
+            .header {
+                background: #667eea;
+                -webkit-print-color-adjust: exact;
+                print-color-adjust: exact;
+            }
+            .badge, .progress-fill, .stat-box {
+                -webkit-print-color-adjust: exact;
+                print-color-adjust: exact;
+            }
+            .chart-container img {
+                max-width: 90%;
+                page-break-inside: avoid;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .grid-2, .grid-3, .grid-4 {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- ============================================ -->
+        <!-- HEADER -->
+        <!-- ============================================ -->
+        <div class="header">
+            <h1>📊 Rapport d'analyse complet des données</h1>
+            <p>Fichier: {{ filename }}</p>
+            <div class="meta">
+                Généré le {{ generated_at }} | Temps d'exécution: {{ execution_time }} secondes
+            </div>
+        </div>
+        
+        <!-- ============================================ -->
+        <!-- PARTIE 1: SCORE DE QUALITÉ -->
+        <!-- ============================================ -->
+        <div class="card">
+            <h2>⭐ Score de qualité des données</h2>
+            <div class="grid-2">
+                <div class="stat-box">
+                    <div class="stat-number">{{ quality_score }}/100</div>
+                    <div class="stat-label">Score global</div>
+                </div>
+                <div class="stat-box">
+                    <div class="stat-number">Grade {{ quality_grade }}</div>
+                    <div class="stat-label">Niveau de qualité</div>
+                </div>
+            </div>
+            <div class="progress-bar" style="margin-top: 15px;">
+                <div class="progress-fill" style="width: {{ quality_score }}%;"></div>
+            </div>
+            <p style="margin-top: 15px;">{{ quality_interpretation }}</p>
+            
+            <h3>Détail des composantes</h3>
+            <div class="grid-4">
+                <div class="stat-box">
+                    <div class="stat-number">{{ completeness_score }}</div>
+                    <div class="stat-label">Complétude</div>
+                </div>
+                <div class="stat-box">
+                    <div class="stat-number">{{ integrity_score }}</div>
+                    <div class="stat-label">Intégrité</div>
+                </div>
+                <div class="stat-box">
+                    <div class="stat-number">{{ consistency_score }}</div>
+                    <div class="stat-label">Consistance</div>
+                </div>
+                <div class="stat-box">
+                    <div class="stat-number">{{ accuracy_score }}</div>
+                    <div class="stat-label">Précision</div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- ============================================ -->
+        <!-- PARTIE 2: APERÇU DU DATASET -->
+        <!-- ============================================ -->
+        <div class="card">
+            <h2>📈 Aperçu du dataset</h2>
+            <div class="grid-3">
+                <div class="stat-box">
+                    <div class="stat-number">{{ rows }}</div>
+                    <div class="stat-label">Lignes</div>
+                </div>
+                <div class="stat-box">
+                    <div class="stat-number">{{ columns }}</div>
+                    <div class="stat-label">Colonnes</div>
+                </div>
+                <div class="stat-box">
+                    <div class="stat-number">{{ memory_mb }} MB</div>
+                    <div class="stat-label">Mémoire</div>
+                </div>
+            </div>
+            
+            <h3>Types de colonnes</h3>
+            <div class="grid-4">
+                <div class="stat-box">
+                    <div class="stat-number">{{ numeric_cols }}</div>
+                    <div class="stat-label">Numériques</div>
+                </div>
+                <div class="stat-box">
+                    <div class="stat-number">{{ categorical_cols }}</div>
+                    <div class="stat-label">Catégorielles</div>
+                </div>
+                <div class="stat-box">
+                    <div class="stat-number">{{ text_cols }}</div>
+                    <div class="stat-label">Texte</div>
+                </div>
+                <div class="stat-box">
+                    <div class="stat-number">{{ datetime_cols }}</div>
+                    <div class="stat-label">Date</div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- ============================================ -->
+        <!-- PARTIE 3: RÉSUMÉ EXÉCUTIF -->
+        <!-- ============================================ -->
+        <div class="card">
+            <h2>💡 Résumé exécutif</h2>
+            <div class="insight">
+                {{ executive_summary }}
+            </div>
+        </div>
+        
+        <!-- ============================================ -->
+        <!-- PARTIE 4: VALEURS MANQUANTES -->
+        <!-- ============================================ -->
+        <div class="card">
+            <h2>❌ Analyse des valeurs manquantes</h2>
+            <div class="grid-2">
+                <div>
+                    <h3>Statistiques globales</h3>
+                    <ul>
+                        <li>Total cellules: {{ total_cells }}</li>
+                        <li>Valeurs manquantes: {{ total_missing }} ({{ missing_percentage }}%)</li>
+                        <li>Colonnes avec manquants: {{ columns_with_missing }}</li>
+                        <li>Lignes avec manquants: {{ rows_with_missing }}</li>
+                    </ul>
+                </div>
+                <div>
+                    <h3>Détail par colonne</h3>
+                    <table>
+                        <thead><tr><th>Colonne</th><th>Manquants</th><th>%</th></tr></thead>
+                        <tbody>
+                            {% for col, info in missing_columns.items() %}
+                            <tr>
+                                <td>{{ col }}</td>
+                                <td>{{ info.missing_count }}</td>
+                                <td>
+                                    {{ info.missing_percentage }}%
+                                    <div class="progress-bar" style="margin-top: 5px;">
+                                        <div class="progress-fill" style="width: {{ info.missing_percentage }}%; background: #e74c3c;"></div>
+                                    </div>
+                                </td>
+                            </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+        
+        <!-- ============================================ -->
+        <!-- PARTIE 5: STATISTIQUES -->
+        <!-- ============================================ -->
+        <div class="card">
+            <h2>📊 Statistiques descriptives</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Colonne</th>
+                        <th>Moyenne</th>
+                        <th>Médiane</th>
+                        <th>Écart-type</th>
+                        <th>Min</th>
+                        <th>Max</th>
+                        <th>Asymétrie</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for col, stats in statistics.items() %}
+                    <tr>
+                        <td><strong>{{ col }}</strong></td>
+                        <td>{{ stats.mean|round(2) if stats.mean else '-' }}</td>
+                        <td>{{ stats.median|round(2) if stats.median else '-' }}</td>
+                        <td>{{ stats.std|round(2) if stats.std else '-' }}</td>
+                        <td>{{ stats.min|round(2) if stats.min else '-' }}</td>
+                        <td>{{ stats.max|round(2) if stats.max else '-' }}</td>
+                        <td>{{ stats.skewness|round(3) if stats.skewness else '-' }}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+        
+        <!-- ============================================ -->
+        <!-- PARTIE 6: CORRÉLATIONS -->
+        <!-- ============================================ -->
+        <div class="card">
+            <h2>🔗 Corrélations importantes</h2>
+            {% if strong_correlations %}
+                <div class="grid-2">
+                    {% for corr in strong_correlations[:8] %}
+                    <div class="insight">
+                        <strong>{{ corr.var1 }}</strong> ↔ <strong>{{ corr.var2 }}</strong><br>
+                        Corrélation: <strong>{{ corr.correlation }}</strong><br>
+                        <span class="badge {% if corr.direction == 'positive' %}badge-success{% else %}badge-danger{% endif %}">
+                            {{ corr.strength }} {{ corr.direction }}
+                        </span>
+                    </div>
+                    {% endfor %}
+                </div>
+            {% else %}
+                <p>Aucune corrélation forte détectée.</p>
+            {% endif %}
+        </div>
+        
+        <!-- ============================================ -->
+        <!-- PARTIE 7: NORMALITÉ -->
+        <!-- ============================================ -->
+        <div class="card">
+            <h2>📐 Tests de normalité (Shapiro-Wilk)</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Colonne</th>
+                        <th>P-value</th>
+                        <th>Distribution</th>
+                        <th>Recommandation</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for col, result in normality.items() %}
+                    <tr>
+                        <td><strong>{{ col }}</strong></td>
+                        <td>{{ "%.6f"|format(result.p_value) if result.p_value else 'N/A' }}</td>
+                        <td>
+                            {% if result.is_normal %}
+                                <span class="badge badge-success">Normale</span>
+                            {% else %}
+                                <span class="badge badge-danger">Non normale</span>
+                            {% endif %}
+                        </td>
+                        <td>{{ result.recommendation if result.recommendation else '-' }}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+        
+        <!-- ============================================ -->
+        <!-- PARTIE 8: OUTLIERS -->
+        <!-- ============================================ -->
+        <div class="card">
+            <h2>⚠️ Détection d'outliers</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Colonne</th>
+                        <th>Outliers (IQR)</th>
+                        <th>% IQR</th>
+                        <th>Action suggérée</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for col, info in outliers.items() %}
+                    <tr>
+                        <td><strong>{{ col }}</strong></td>
+                        <td>{{ info.iqr.outlier_count if info.iqr else 0 }}</td>
+                        <td>{{ info.iqr.outlier_percentage if info.iqr else 0 }}%</td>
+                        <td>
+                            {% if info.iqr.outlier_percentage > 10 %}
+                                <span class="badge badge-warning">Traitement recommandé</span>
+                            {% else %}
+                                <span class="badge badge-success">Acceptable</span>
+                            {% endif %}
+                        </td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+        
+        <!-- ============================================ -->
+        <!-- PARTIE 9: ANALYSE AVANCÉE -->
+        <!-- ============================================ -->
+        <div class="card">
+            <h2>🔬 Analyse avancée des colonnes</h2>
+            
+            <h3>Colonnes problématiques</h3>
+            <div class="grid-2">
+                <div>
+                    <strong>Colonnes constantes:</strong>
+                    <ul>{% for col in constant_columns %}<li>{{ col }}</li>{% else %}<li>Aucune</li>{% endfor %}</ul>
+                </div>
+                <div>
+                    <strong>Colonnes ID:</strong>
+                    <ul>{% for col in id_columns %}<li>{{ col }}</li>{% else %}<li>Aucune</li>{% endfor %}</ul>
+                </div>
+                <div>
+                    <strong>Haute cardinalité:</strong>
+                    <ul>{% for col in high_cardinality_columns[:5] %}<li>{{ col }}</li>{% else %}<li>Aucune</li>{% endfor %}</ul>
+                </div>
+                <div>
+                    <strong>Forte asymétrie:</strong>
+                    <ul>{% for col in highly_skewed_columns %}<li>{{ col }}</li>{% else %}<li>Aucune</li>{% endfor %}</ul>
+                </div>
+            </div>
+            
+            <h3>Score qualité avancé</h3>
+            <div class="stat-box">
+                <div class="stat-number">{{ advanced_quality_score }}/100</div>
+                <div class="stat-label">Colonnes problématiques: {{ advanced_problematic_count }}</div>
+            </div>
+        </div>
+        
+        <!-- ============================================ -->
+        <!-- PARTIE 10: ANALYSE CATÉGORIELLE -->
+        <!-- ============================================ -->
+        <div class="card">
+            <h2>🏷️ Analyse des colonnes catégorielles</h2>
+            
+            <div class="grid-3">
+                <div class="stat-box">
+                    <div class="stat-number">{{ categorical_columns|length }}</div>
+                    <div class="stat-label">Colonnes catégorielles</div>
+                </div>
+                <div class="stat-box">
+                    <div class="stat-number">{{ categorical_binary_columns|length }}</div>
+                    <div class="stat-label">Colonnes binaires</div>
+                </div>
+                <div class="stat-box">
+                    <div class="stat-number">{{ categorical_balanced_columns|length }}</div>
+                    <div class="stat-label">Classes équilibrées</div>
+                </div>
+            </div>
+            
+            <h3>Détail des colonnes catégorielles</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Colonne</th>
+                        <th>Valeurs uniques</th>
+                        <th>Valeur dominante</th>
+                        <th>Fréquence</th>
+                        <th>Équilibrée</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for col, analysis in categorical_analysis.items() %}
+                    <tr>
+                        <td><strong>{{ col }}</strong></td>
+                        <td>{{ analysis.unique_count }}</td>
+                        <td>{{ analysis.mode.value if analysis.mode else '-' }}</td>
+                        <td>{{ analysis.mode.percentage if analysis.mode else 0 }}%</td>
+                        <td>
+                            {% if analysis.is_balanced %}
+                                <span class="badge badge-success">✅</span>
+                            {% else %}
+                                <span class="badge badge-warning">❌</span>
+                            {% endif %}
+                        </td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+            
+            <h3>Insights catégoriels</h3>
+            {% for insight in categorical_insights %}
+            <div class="insight">{{ insight }}</div>
+            {% endfor %}
+        </div>
+        
+        <!-- ============================================ -->
+        <!-- PARTIE 11: DÉTECTION ML -->
+        <!-- ============================================ -->
+        <div class="card">
+            <h2>🤖 Détection automatique du problème ML</h2>
+            
+            <div class="grid-2">
+                <div class="stat-box">
+                    <div class="stat-number">{{ ml_target_column or 'Non détectée' }}</div>
+                    <div class="stat-label">Colonne cible suggérée</div>
+                </div>
+                <div class="stat-box">
+                    <div class="stat-number">{{ ml_problem_type }}</div>
+                    <div class="stat-label">Type de problème</div>
+                </div>
+            </div>
+            
+            <h3>Modèles suggérés</h3>
+            <ul>
+                {% for model in ml_model_suggestions %}
+                <li>{{ model }}</li>
+                {% endfor %}
+            </ul>
+            
+            <h3>Préparation pour le ML</h3>
+            <div class="progress-bar" style="margin-top: 10px;">
+                <div class="progress-fill" style="width: {% if ml_ready_level == 'high' %}80{% elif ml_ready_level == 'medium' %}60{% else %}40{% endif %}%;"></div>
+            </div>
+            <p>Niveau de préparation: <strong>{{ ml_ready_level }}</strong></p>
+            
+            <h3>Recommandations ML</h3>
+            <ul>
+                {% for rec in ml_recommendations %}
+                <li>{{ rec.action }} - {{ rec.reason }}</li>
+                {% endfor %}
+            </ul>
+        </div>
+        
+        <!-- ============================================ -->
+        <!-- PARTIE 11.5: ÉTAPES DE PRÉTRAITEMENT ML -->
+        <!-- ============================================ -->
+        <div class="card">
+            <h2>🔧 Étapes de prétraitement recommandées</h2>
+            
+            <h3>Pipeline de prétraitement</h3>
+            <ol style="margin-left: 20px;">
+                {% for step in ml_preprocessing_steps %}
+                <li style="margin-bottom: 15px;">
+                    <strong>{{ step.action }}</strong><br>
+                    <span class="badge badge-info">Méthode: {{ step.method if step.method else 'Standard' }}</span>
+                    {% if step.code %}
+                    <pre style="background: #f5f5f5; padding: 10px; margin-top: 5px; border-radius: 5px; overflow-x: auto;"><code>{{ step.code }}</code></pre>
+                    {% endif %}
+                    <small>{{ step.reason }}</small>
+                </li>
+                {% endfor %}
+            </ol>
+            
+            <h3>Feature Engineering suggéré</h3>
+            <ul>
+                <li><strong>Création de nouvelles variables:</strong> Interaction entre variables, polynômes, log</li>
+                <li><strong>Sélection de features:</strong> Mutual information, feature importance, corrélations</li>
+                <li><strong>Réduction de dimensionnalité:</strong> PCA, t-SNE (si >50 features)</li>
+            </ul>
+            
+            <h3>Évaluation du modèle</h3>
+            <div class="grid-2">
+                <div class="stat-box">
+                    <div class="stat-number">80/20</div>
+                    <div class="stat-label">Train/Test split</div>
+                </div>
+                <div class="stat-box">
+                    <div class="stat-number">5-Fold</div>
+                    <div class="stat-label">Cross-validation</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ============================================ -->
+        <!-- PARTIE 12: VISUALISATIONS -->
+        <!-- ============================================ -->
+        <div class="card">
+            <h2>📈 Visualisations</h2>
+            
+            {% if histograms %}
+            <h3>Histogrammes</h3>
+            <div class="chart-container">
+                <img src="data:image/png;base64,{{ histograms }}" alt="Histogrammes">
+            </div>
+            {% endif %}
+            
+            {% if boxplots %}
+            <h3>Boxplots</h3>
+            <div class="chart-container">
+                <img src="data:image/png;base64,{{ boxplots }}" alt="Boxplots">
+            </div>
+            {% endif %}
+            
+            {% if pearson_heatmap %}
+            <h3>Matrice de corrélation</h3>
+            <div class="chart-container">
+                <img src="data:image/png;base64,{{ pearson_heatmap }}" alt="Heatmap">
+            </div>
+            {% endif %}
+            
+            {% if missing_heatmap %}
+            <h3>Carte des valeurs manquantes</h3>
+            <div class="chart-container">
+                <img src="data:image/png;base64,{{ missing_heatmap }}" alt="Missing heatmap">
+            </div>
+            {% endif %}
+        </div>
+        
+        <!-- ============================================ -->
+        <!-- PARTIE 13: INSIGHTS -->
+        <!-- ============================================ -->
+        <div class="card">
+            <h2>💡 Insights automatiques</h2>
+            {% for insight in insights_list %}
+            <div class="insight">{{ insight }}</div>
+            {% endfor %}
+        </div>
+        
+        <!-- ============================================ -->
+        <!-- PARTIE 14: RECOMMANDATIONS -->
+        <!-- ============================================ -->
+        <div class="card">
+            <h2>🎯 Recommandations</h2>
+            <ul>
+                {% for rec in recommendations %}
+                <li>
+                    <strong>{{ rec.action }}</strong> - {{ rec.reason }}
+                    {% if rec.severity == 'high' %}
+                        <span class="badge badge-danger">Prioritaire</span>
+                    {% endif %}
+                </li>
+                {% endfor %}
+            </ul>
+        </div>
+        
+        <!-- ============================================ -->
+        <!-- PARTIE 15: TABLEAU DE BORD -->
+        <!-- ============================================ -->
+        <div class="card">
+            <h2>📋 Tableau de bord récapitulatif</h2>
+            <div class="grid-4">
+                <div class="stat-box">
+                    <div class="stat-number">{{ rows }}</div>
+                    <div class="stat-label">Lignes</div>
+                </div>
+                <div class="stat-box">
+                    <div class="stat-number">{{ columns_with_missing }}</div>
+                    <div class="stat-label">Colonnes avec anomalies</div>
+                </div>
+                <div class="stat-box">
+                    <div class="stat-number">{{ outliers_columns_count }}</div>
+                    <div class="stat-label">Colonnes avec outliers</div>
+                </div>
+                <div class="stat-box">
+                    <div class="stat-number">{{ non_normal_count }}</div>
+                    <div class="stat-label">Colonnes non-normales</div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Footer -->
+        <div class="footer">
+            <p>Rapport généré automatiquement par AutoEDA Backend</p>
+            <p>{{ generated_at }}</p>
+        </div>
+    </div>
+</body>
+</html>

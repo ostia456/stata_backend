@@ -1,0 +1,149 @@
+{
+  "columns": [
+    "PassengerId",
+    "Survived",
+    "Pclass",
+    "Age",
+    "SibSp",
+    "Parch",
+    "Fare"
+  ],
+  "results": {
+    "PassengerId": {
+      "test_statistic": 0.9548,
+      "p_value": 0.0,
+      "is_normal": false,
+      "sample_size": 891,
+      "original_size": 891,
+      "interpretation": "Distribution non normale (p-value \u2264 0.05)",
+      "recommendation": "Standardisation (z-score) pour centrer et r\u00e9duire"
+    },
+    "Survived": {
+      "test_statistic": 0.6167,
+      "p_value": 0.0,
+      "is_normal": false,
+      "sample_size": 891,
+      "original_size": 891,
+      "interpretation": "Distribution non normale (p-value \u2264 0.05)",
+      "recommendation": "Standardisation (z-score) pour centrer et r\u00e9duire"
+    },
+    "Pclass": {
+      "test_statistic": 0.7183,
+      "p_value": 0.0,
+      "is_normal": false,
+      "sample_size": 891,
+      "original_size": 891,
+      "interpretation": "Distribution non normale (p-value \u2264 0.05)",
+      "recommendation": "Standardisation (z-score) pour centrer et r\u00e9duire"
+    },
+    "Age": {
+      "test_statistic": 0.9815,
+      "p_value": 0.0,
+      "is_normal": false,
+      "sample_size": 714,
+      "original_size": 714,
+      "interpretation": "Distribution non normale (p-value \u2264 0.05)",
+      "recommendation": "Standardisation (z-score) pour centrer et r\u00e9duire"
+    },
+    "SibSp": {
+      "test_statistic": 0.513,
+      "p_value": 0.0,
+      "is_normal": false,
+      "sample_size": 891,
+      "original_size": 891,
+      "interpretation": "Distribution non normale (p-value \u2264 0.05)",
+      "recommendation": "Transformation logarithmique (log) ou racine carr\u00e9e (sqrt)"
+    },
+    "Parch": {
+      "test_statistic": 0.5328,
+      "p_value": 0.0,
+      "is_normal": false,
+      "sample_size": 891,
+      "original_size": 891,
+      "interpretation": "Distribution non normale (p-value \u2264 0.05)",
+      "recommendation": "Transformation logarithmique (log) ou racine carr\u00e9e (sqrt)"
+    },
+    "Fare": {
+      "test_statistic": 0.5219,
+      "p_value": 0.0,
+      "is_normal": false,
+      "sample_size": 891,
+      "original_size": 891,
+      "interpretation": "Distribution non normale (p-value \u2264 0.05)",
+      "recommendation": "Transformation logarithmique (log) ou racine carr\u00e9e (sqrt)"
+    }
+  },
+  "normal_columns": [],
+  "non_normal_columns": [
+    "PassengerId",
+    "Survived",
+    "Pclass",
+    "Age",
+    "SibSp",
+    "Parch",
+    "Fare"
+  ],
+  "summary": {
+    "total_columns_tested": 7,
+    "normal_columns_count": 0,
+    "non_normal_columns_count": 7,
+    "normal_percentage": 0.0,
+    "non_normal_percentage": 100.0,
+    "most_normal_column": "PassengerId",
+    "most_normal_p_value": 0.0,
+    "least_normal_column": "PassengerId",
+    "least_normal_p_value": 0.0
+  },
+  "recommendations": [
+    {
+      "column": "PassengerId",
+      "issue": "Distribution non normale",
+      "p_value": 0.0,
+      "recommendation": "Standardisation (z-score) pour centrer et r\u00e9duire",
+      "priority": "high"
+    },
+    {
+      "column": "Survived",
+      "issue": "Distribution non normale",
+      "p_value": 0.0,
+      "recommendation": "Standardisation (z-score) pour centrer et r\u00e9duire",
+      "priority": "high"
+    },
+    {
+      "column": "Pclass",
+      "issue": "Distribution non normale",
+      "p_value": 0.0,
+      "recommendation": "Standardisation (z-score) pour centrer et r\u00e9duire",
+      "priority": "high"
+    },
+    {
+      "column": "Age",
+      "issue": "Distribution non normale",
+      "p_value": 0.0,
+      "recommendation": "Standardisation (z-score) pour centrer et r\u00e9duire",
+      "priority": "high"
+    },
+    {
+      "column": "SibSp",
+      "issue": "Distribution non normale",
+      "p_value": 0.0,
+      "recommendation": "Transformation logarithmique (log) ou racine carr\u00e9e (sqrt)",
+      "priority": "high"
+    },
+    {
+      "column": "Parch",
+      "issue": "Distribution non normale",
+      "p_value": 0.0,
+      "recommendation": "Transformation logarithmique (log) ou racine carr\u00e9e (sqrt)",
+      "priority": "high"
+    },
+    {
+      "column": "Fare",
+      "issue": "Distribution non normale",
+      "p_value": 0.0,
+      "recommendation": "Transformation logarithmique (log) ou racine carr\u00e9e (sqrt)",
+      "priority": "high"
+    }
+  ],
+  "file_id": "9a84a459"
+}

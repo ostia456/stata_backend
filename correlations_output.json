@@ -1,0 +1,259 @@
+{
+  "numeric_columns": [
+    "PassengerId",
+    "Survived",
+    "Pclass",
+    "Age",
+    "SibSp",
+    "Parch",
+    "Fare"
+  ],
+  "pearson": {
+    "method": "pearson",
+    "columns": [
+      "PassengerId",
+      "Survived",
+      "Pclass",
+      "Age",
+      "SibSp",
+      "Parch",
+      "Fare"
+    ],
+    "matrix": {
+      "PassengerId": {
+        "PassengerId": 1.0,
+        "Survived": -0.005,
+        "Pclass": -0.035,
+        "Age": 0.037,
+        "SibSp": -0.058,
+        "Parch": -0.002,
+        "Fare": 0.013
+      },
+      "Survived": {
+        "PassengerId": -0.005,
+        "Survived": 1.0,
+        "Pclass": -0.338,
+        "Age": -0.077,
+        "SibSp": -0.035,
+        "Parch": 0.082,
+        "Fare": 0.257
+      },
+      "Pclass": {
+        "PassengerId": -0.035,
+        "Survived": -0.338,
+        "Pclass": 1.0,
+        "Age": -0.369,
+        "SibSp": 0.083,
+        "Parch": 0.018,
+        "Fare": -0.549
+      },
+      "Age": {
+        "PassengerId": 0.037,
+        "Survived": -0.077,
+        "Pclass": -0.369,
+        "Age": 1.0,
+        "SibSp": -0.308,
+        "Parch": -0.189,
+        "Fare": 0.096
+      },
+      "SibSp": {
+        "PassengerId": -0.058,
+        "Survived": -0.035,
+        "Pclass": 0.083,
+        "Age": -0.308,
+        "SibSp": 1.0,
+        "Parch": 0.415,
+        "Fare": 0.16
+      },
+      "Parch": {
+        "PassengerId": -0.002,
+        "Survived": 0.082,
+        "Pclass": 0.018,
+        "Age": -0.189,
+        "SibSp": 0.415,
+        "Parch": 1.0,
+        "Fare": 0.216
+      },
+      "Fare": {
+        "PassengerId": 0.013,
+        "Survived": 0.257,
+        "Pclass": -0.549,
+        "Age": 0.096,
+        "SibSp": 0.16,
+        "Parch": 0.216,
+        "Fare": 1.0
+      }
+    },
+    "strong_correlations": [],
+    "summary": {
+      "max_correlation": 0.549,
+      "min_correlation": 0.002,
+      "mean_correlation": 0.159,
+      "num_strong_correlations": 0,
+      "num_very_strong_correlations": 0
+    }
+  },
+  "spearman": {
+    "method": "spearman",
+    "columns": [
+      "PassengerId",
+      "Survived",
+      "Pclass",
+      "Age",
+      "SibSp",
+      "Parch",
+      "Fare"
+    ],
+    "matrix": {
+      "PassengerId": {
+        "PassengerId": 1.0,
+        "Survived": -0.005,
+        "Pclass": -0.034,
+        "Age": 0.041,
+        "SibSp": -0.061,
+        "Parch": 0.001,
+        "Fare": -0.014
+      },
+      "Survived": {
+        "PassengerId": -0.005,
+        "Survived": 1.0,
+        "Pclass": -0.34,
+        "Age": -0.053,
+        "SibSp": 0.089,
+        "Parch": 0.138,
+        "Fare": 0.324
+      },
+      "Pclass": {
+        "PassengerId": -0.034,
+        "Survived": -0.34,
+        "Pclass": 1.0,
+        "Age": -0.362,
+        "SibSp": -0.043,
+        "Parch": -0.023,
+        "Fare": -0.688
+      },
+      "Age": {
+        "PassengerId": 0.041,
+        "Survived": -0.053,
+        "Pclass": -0.362,
+        "Age": 1.0,
+        "SibSp": -0.182,
+        "Parch": -0.254,
+        "Fare": 0.135
+      },
+      "SibSp": {
+        "PassengerId": -0.061,
+        "Survived": 0.089,
+        "Pclass": -0.043,
+        "Age": -0.182,
+        "SibSp": 1.0,
+        "Parch": 0.45,
+        "Fare": 0.447
+      },
+      "Parch": {
+        "PassengerId": 0.001,
+        "Survived": 0.138,
+        "Pclass": -0.023,
+        "Age": -0.254,
+        "SibSp": 0.45,
+        "Parch": 1.0,
+        "Fare": 0.41
+      },
+      "Fare": {
+        "PassengerId": -0.014,
+        "Survived": 0.324,
+        "Pclass": -0.688,
+        "Age": 0.135,
+        "SibSp": 0.447,
+        "Parch": 0.41,
+        "Fare": 1.0
+      }
+    },
+    "strong_correlations": [],
+    "summary": {
+      "max_correlation": 0.688,
+      "min_correlation": 0.001,
+      "mean_correlation": 0.195,
+      "num_strong_correlations": 0,
+      "num_very_strong_correlations": 0
+    }
+  },
+  "comparison": {
+    "max_difference": 0.287,
+    "mean_difference": 0.065,
+    "potential_nonlinear": [],
+    "all_differences": [
+      {
+        "var1": "Fare",
+        "var2": "SibSp",
+        "pearson": 0.16,
+        "spearman": 0.447,
+        "difference": 0.287
+      },
+      {
+        "var1": "Fare",
+        "var2": "Parch",
+        "pearson": 0.216,
+        "spearman": 0.41,
+        "difference": 0.194
+      },
+      {
+        "var1": "Fare",
+        "var2": "Pclass",
+        "pearson": -0.549,
+        "spearman": -0.688,
+        "difference": 0.139
+      },
+      {
+        "var1": "Pclass",
+        "var2": "SibSp",
+        "pearson": 0.083,
+        "spearman": -0.043,
+        "difference": 0.126
+      },
+      {
+        "var1": "Age",
+        "var2": "SibSp",
+        "pearson": -0.308,
+        "spearman": -0.182,
+        "difference": 0.126
+      },
+      {
+        "var1": "SibSp",
+        "var2": "Survived",
+        "pearson": -0.035,
+        "spearman": 0.089,
+        "difference": 0.124
+      },
+      {
+        "var1": "Fare",
+        "var2": "Survived",
+        "pearson": 0.257,
+        "spearman": 0.324,
+        "difference": 0.067
+      },
+      {
+        "var1": "Age",
+        "var2": "Parch",
+        "pearson": -0.189,
+        "spearman": -0.254,
+        "difference": 0.065
+      },
+      {
+        "var1": "Parch",
+        "var2": "Survived",
+        "pearson": 0.082,
+        "spearman": 0.138,
+        "difference": 0.056
+      },
+      {
+        "var1": "Parch",
+        "var2": "Pclass",
+        "pearson": 0.018,
+        "spearman": -0.023,
+        "difference": 0.041
+      }
+    ]
+  },
+  "file_id": "9a84a459"
+}

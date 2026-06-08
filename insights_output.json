@@ -1,0 +1,55 @@
+{
+  "summary": "Le dataset contient 891 lignes et 12 colonnes. Il comprend 7 colonnes numériques et 5 colonnes catégorielles. Le taux de valeurs manquantes est de 8.1%. ",
+  "missing_insights": [
+    "ℹ️ La colonne 'Age' présente 19.9% de valeurs manquantes.",
+    "⚠️ La colonne 'Cabin' contient 77.1% de valeurs manquantes. Envisagez de la supprimer."
+  ],
+  "numeric_insights": [
+    "📊 'PassengerId' a une distribution aplatie - les valeurs sont plus dispersées que la normale.",
+    "📊 'Survived' a une distribution aplatie - les valeurs sont plus dispersées que la normale.",
+    "📊 'Pclass' présente une légère asymétrie négative (-0.63).",
+    "📊 'Pclass' a une distribution aplatie - les valeurs sont plus dispersées que la normale.",
+    "📊 'SibSp' a une forte asymétrie positive (3.70) - la majorité des valeurs sont faibles avec quelques valeurs élevées."
+  ],
+  "categorical_insights": [
+    "⚠️ 'Name' a 891 valeurs uniques - pourrait être un identifiant ou une variable texte.",
+    "🏷️ 'Sex' est binaire: male représente 64.8% des valeurs.",
+    "⚠️ 'Ticket' a 681 valeurs uniques - pourrait être un identifiant ou une variable texte.",
+    "⚠️ 'Cabin' a 147 valeurs uniques - pourrait être un identifiant ou une variable texte.",
+    "🏷️ 'Embarked' a 3 catégories différentes - bonne variable catégorielle."
+  ],
+  "correlation_insights": [
+    "🎯 La meilleure corrélation avec 'Survived' est 'Pclass' (r=0.34)"
+  ],
+  "outlier_insights": [
+    "ℹ️ 'SibSp' a 5.2% d'outliers.",
+    "⚠️ 'Parch' contient 23.9% d'outliers - valeurs extrêmes à vérifier.",
+    "⚠️ 'Fare' contient 13.0% d'outliers - valeurs extrêmes à vérifier."
+  ],
+  "quality_insights": [
+    "📈 Score de qualité global: 89.34/100 (Grade B)",
+    "✅ Les données sont de bonne qualité. Quelques nettoyages mineurs sont recommandés."
+  ],
+  "recommendations": [
+    {
+      "priority": "high",
+      "category": "missing_values",
+      "action": "Supprimer la colonne 'Cabin'",
+      "reason": "77.1% de valeurs manquantes"
+    },
+    {
+      "priority": "low",
+      "category": "identifier",
+      "action": "Considérer 'PassengerId' comme identifiant",
+      "reason": "Valeurs uniques sur chaque ligne"
+    },
+    {
+      "priority": "low",
+      "category": "identifier",
+      "action": "Considérer 'Name' comme identifiant",
+      "reason": "Valeurs uniques sur chaque ligne"
+    }
+  ],
+  "executive_summary": "Le dataset contient 891 lignes et 12 colonnes. Il comprend 7 colonnes numériques et 5 colonnes catégorielles. Le taux de valeurs manquantes est de 8.1%.  ℹ️ La colonne 'Age' présente 19.9% de valeurs manquantes. 📈 Score de qualité global: 89.34/100 (Grade B) 🎯 La meilleure corrélation avec 'Survived' est 'Pclass' (r=0.34) Action prioritaire: Supprimer la colonne 'Cabin'",
+  "file_id": "9a84a459"
+}

@@ -1,0 +1,290 @@
+{
+  "file_id": "9a84a459",
+  "generated_at": "2026-06-03T13:02:39.276980",
+  "ml_detection": {
+    "target_column": "Survived",
+    "target_confidence": 1.3,
+    "target_analysis": {
+      "name": "Survived",
+      "dtype": "int64",
+      "unique_count": 2,
+      "null_count": 0,
+      "null_percentage": 0.0,
+      "min": 0.0,
+      "max": 1.0,
+      "mean": 0.3838383838383838,
+      "median": 0.0,
+      "std": 0.4865924542648575,
+      "top_values": [
+        {
+          "value": "0",
+          "count": 549,
+          "percentage": 61.62
+        },
+        {
+          "value": "1",
+          "count": 342,
+          "percentage": 38.38
+        }
+      ],
+      "imbalance_ratio": 0.623,
+      "is_balanced": true
+    },
+    "problem_type": {
+      "type": "binary_classification",
+      "message": "Problème de classification binaire",
+      "confidence": "high",
+      "target": "Survived",
+      "classes": [
+        "0",
+        "1"
+      ],
+      "is_balanced": true
+    },
+    "feature_analysis": {
+      "total_features": 11,
+      "numeric_features_count": 6,
+      "categorical_features_count": 5,
+      "numeric_features": [
+        "PassengerId",
+        "Pclass",
+        "Age",
+        "SibSp",
+        "Parch",
+        "Fare"
+      ],
+      "categorical_features": [
+        "Name",
+        "Sex",
+        "Ticket",
+        "Cabin",
+        "Embarked"
+      ],
+      "has_missing": true,
+      "missing_features_count": 3
+    },
+    "model_suggestions": [
+      "Logistic Regression (baseline)",
+      "Random Forest Classifier",
+      "XGBoost Classifier",
+      "LightGBM Classifier",
+      "Support Vector Machine (SVM)"
+    ],
+    "ready_for_ml": {
+      "ready": false,
+      "issues": [
+        "5 colonnes catégorielles à encoder"
+      ],
+      "ready_level": "medium"
+    },
+    "recommendations": [
+      {
+        "priority": 1,
+        "action": "Utiliser 'Survived' comme variable cible",
+        "reason": "Détecté automatiquement (confiance: high)"
+      },
+      {
+        "priority": 2,
+        "action": "Imputer les valeurs manquantes de 'Age'",
+        "reason": "177 valeurs manquantes"
+      },
+      {
+        "priority": 2,
+        "action": "Imputer les valeurs manquantes de 'Cabin'",
+        "reason": "687 valeurs manquantes"
+      },
+      {
+        "priority": 2,
+        "action": "Imputer les valeurs manquantes de 'Embarked'",
+        "reason": "2 valeurs manquantes"
+      },
+      {
+        "priority": 2,
+        "action": "Encoder 'Sex' en One-Hot Encoding",
+        "reason": "2 catégories"
+      },
+      {
+        "priority": 3,
+        "action": "Encoder 'Name' avec LabelEncoder ou TargetEncoder",
+        "reason": "Haute cardinalité (891 catégories)"
+      },
+      {
+        "priority": 3,
+        "action": "Encoder 'Ticket' avec LabelEncoder ou TargetEncoder",
+        "reason": "Haute cardinalité (681 catégories)"
+      },
+      {
+        "priority": 3,
+        "action": "Standardiser les variables numériques",
+        "reason": "6 colonnes numériques"
+      }
+    ]
+  },
+  "data_quality_assessment": {
+    "overall_score": 85,
+    "issues_found": 0,
+    "constant_columns": 0,
+    "high_cardinality": 5,
+    "missing_values_problematic": false,
+    "ready_for_modeling": true
+  },
+  "preprocessing_steps": [
+    {
+      "step": 1,
+      "action": "Gérer les valeurs manquantes",
+      "column": "Age",
+      "method": "Imputer par la médiane/moyenne/mode",
+      "code": "df['Age'] = df['Age'].fillna(df['Age'].median())",
+      "priority": "medium"
+    },
+    {
+      "step": 1,
+      "action": "Gérer les valeurs manquantes",
+      "column": "Cabin",
+      "method": "Supprimer la colonne",
+      "code": "df = df.drop(columns=['Cabin'])",
+      "priority": "high"
+    },
+    {
+      "step": 1,
+      "action": "Gérer les valeurs manquantes",
+      "column": "Embarked",
+      "method": "Supprimer les lignes",
+      "code": "df = df.dropna(subset=['Embarked'])",
+      "priority": "medium"
+    },
+    {
+      "step": 2,
+      "action": "Encoder les variables catégorielles",
+      "column": "Name",
+      "method": "Label Encoding ou Target Encoding",
+      "code": "from sklearn.preprocessing import LabelEncoder\nle = LabelEncoder()\ndf['Name'] = le.fit_transform(df['Name'])",
+      "priority": "medium"
+    },
+    {
+      "step": 3,
+      "action": "Encoder les variables catégorielles",
+      "column": "Sex",
+      "method": "One-Hot Encoding",
+      "code": "df = pd.get_dummies(df, columns=['Sex'], drop_first=True)",
+      "priority": "high"
+    },
+    {
+      "step": 4,
+      "action": "Encoder les variables catégorielles",
+      "column": "Ticket",
+      "method": "Label Encoding ou Target Encoding",
+      "code": "from sklearn.preprocessing import LabelEncoder\nle = LabelEncoder()\ndf['Ticket'] = le.fit_transform(df['Ticket'])",
+      "priority": "medium"
+    },
+    {
+      "step": 5,
+      "action": "Encoder les variables catégorielles",
+      "column": "Cabin",
+      "method": "Label Encoding ou Target Encoding",
+      "code": "from sklearn.preprocessing import LabelEncoder\nle = LabelEncoder()\ndf['Cabin'] = le.fit_transform(df['Cabin'])",
+      "priority": "medium"
+    },
+    {
+      "step": 6,
+      "action": "Encoder les variables catégorielles",
+      "column": "Embarked",
+      "method": "One-Hot Encoding",
+      "code": "df = pd.get_dummies(df, columns=['Embarked'], drop_first=True)",
+      "priority": "high"
+    },
+    {
+      "step": 7,
+      "action": "Standardiser les variables numériques",
+      "column": "Toutes les colonnes numériques",
+      "method": "StandardScaler",
+      "code": "from sklearn.preprocessing import StandardScaler\nscaler = StandardScaler()\ndf[numeric_cols] = scaler.fit_transform(df[numeric_cols])",
+      "priority": "medium"
+    },
+    {
+      "step": 8,
+      "action": "Traiter les outliers",
+      "column": "Parch",
+      "method": "Clipping (bornage)",
+      "code": "lower = df['Parch'].quantile(0.01)\nupper = df['Parch'].quantile(0.99)\ndf['Parch'] = df['Parch'].clip(lower, upper)",
+      "priority": "medium"
+    }
+  ],
+  "ml_pipeline": {
+    "data_splitting": {
+      "train_size": 0.8,
+      "test_size": 0.2,
+      "validation_size": 0.2,
+      "code": "from sklearn.model_selection import train_test_split\nX_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)"
+    },
+    "cross_validation": {
+      "folds": 5,
+      "code": "from sklearn.model_selection import cross_val_score, StratifiedKFold\ncv = StratifiedKFold(n_splits=5, shuffle=True, random_state=42)"
+    },
+    "evaluation_metrics": [
+      "Accuracy",
+      "Precision",
+      "Recall",
+      "F1-Score",
+      "AUC-ROC"
+    ],
+    "code_example": "\nfrom sklearn.ensemble import RandomForestClassifier\nfrom sklearn.metrics import classification_report, roc_auc_score\n\nmodel = RandomForestClassifier(n_estimators=100, random_state=42)\nmodel.fit(X_train, y_train)\ny_pred = model.predict(X_test)\n\nprint(classification_report(y_test, y_pred))\nprint(f\"AUC-ROC: {roc_auc_score(y_test, model.predict_proba(X_test)[:, 1]):.3f}\")\n"
+  },
+  "important_features": [
+    {
+      "feature": "Fare",
+      "correlation": 0.257,
+      "importance": "medium",
+      "type": "numeric"
+    },
+    {
+      "feature": "Pclass",
+      "importance": "medium",
+      "type": "categorical",
+      "unique_values": 3
+    },
+    {
+      "feature": "Sex",
+      "importance": "medium",
+      "type": "categorical",
+      "unique_values": 2
+    },
+    {
+      "feature": "SibSp",
+      "importance": "medium",
+      "type": "categorical",
+      "unique_values": 7
+    },
+    {
+      "feature": "Parch",
+      "importance": "medium",
+      "type": "categorical",
+      "unique_values": 7
+    },
+    {
+      "feature": "Embarked",
+      "importance": "medium",
+      "type": "categorical",
+      "unique_values": 3
+    },
+    {
+      "feature": "Pclass",
+      "correlation": -0.338,
+      "importance": "high",
+      "type": "numeric"
+    }
+  ],
+  "potential_issues": [
+    "Valeurs manquantes dans 3 colonnes"
+  ],
+  "readiness_score": {
+    "score": 78.8,
+    "level": "Nettoyage léger requis",
+    "reasons": [
+      "Valeurs manquantes: -16 points",
+      "Haute cardinalité: -15 points",
+      "Cible détectée automatiquement: +10 points"
+    ]
+  },
+  "summary": "Problème identifié: Problème de classification binaire. Cible: Survived. 3 étapes de prétraitement prioritaires recommandées."
+}
