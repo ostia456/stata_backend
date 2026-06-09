@@ -1,0 +1,17 @@
+services:
+  - type: web
+    name: stata-backend
+    runtime: python
+    repo: https://github.com/ostia456/stata_backend
+    branch: main
+    buildCommand: |
+      pip install -r requirements.txt
+      apt-get update && apt-get install -y wkhtmltopdf
+    startCommand: uvicorn app.main:app --host 0.0.0.0 --port $PORT
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.12.5
+      - key: MAX_FILE_SIZE_MB
+        value: 200
+      - key: MAX_ROWS_TO_LOAD
+        value: 10000
