@@ -1,14 +1,15 @@
 """
 Génération de rapports PDF complets avec toutes les analyses
+Compatible local (pdfkit) et Render (playwright)
 """
 
 import os
 import base64
+import asyncio
 from pathlib import Path
 from typing import Dict, Any, Optional
 from datetime import datetime
 import pandas as pd
-import pdfkit
 import plotly.io as pio
 import plotly.graph_objects as go
 from plotly.subplots import make_subplots
@@ -19,31 +20,17 @@ from ..core.ml_detector import MLProblemDetector
 from ..core.advanced_analysis import AdvancedColumnAnalyzer
 from ..core.categorical_analysis import CategoricalAnalyzer
 
+# Détection automatique de l'environnement
+IS_RENDER = os.environ.get('RENDER', False)
+
 
 class PDFReportGenerator:
     """
-    Générateur de rapports PDF complets avec toutes les analyses
+    Générateur de rapports PDF
     """
     
     def __init__(self):
         self.html_generator = HTMLReportGenerator()
-        
-        # Configurer wkhtmltopdf
-        possible_paths = [
-            r"C:\Program Files\wkhtmltopdf\bin\wkhtmltopdf.exe",
-            r"C:\Program Files (x86)\wkhtmltopdf\bin\wkhtmltopdf.exe",
-        ]
-        
-        self.wkhtmltopdf_path = None
-        for path in possible_paths:
-            if os.path.exists(path):
-                self.wkhtmltopdf_path = path
-                break
-        
-        if self.wkhtmltopdf_path:
-            self.config = pdfkit.configuration(wkhtmltopdf=self.wkhtmltopdf_path)
-        else:
-            self.config = None
         
         # Configurer kaleido pour Plotly
         try:
@@ -53,6 +40,52 @@ class PDFReportGenerator:
             self.kaleido_available = True
         except Exception:
             self.kaleido_available = False
+        
+        # Configurer le moteur PDF selon l'environnement
+        self.pdf_engine = None
+        
+        if IS_RENDER:
+            self._setup_playwright()
+        else:
+            self._setup_pdfkit()
+    
+    def _setup_pdfkit(self):
+        """Configuration pour pdfkit (environnement local)"""
+        try:
+            import pdfkit
+            possible_paths = [
+                r"C:\Program Files\wkhtmltopdf\bin\wkhtmltopdf.exe",
+                r"C:\Program Files (x86)\wkhtmltopdf\bin\wkhtmltopdf.exe",
+            ]
+            
+            wkhtmltopdf_path = None
+            for path in possible_paths:
+                if os.path.exists(path):
+                    wkhtmltopdf_path = path
+                    break
+            
+            if wkhtmltopdf_path:
+                self.config = pdfkit.configuration(wkhtmltopdf=wkhtmltopdf_path)
+                self.pdf_engine = 'pdfkit'
+                print("✅ PDF: utilisation de pdfkit (local)")
+            else:
+                self.pdf_engine = None
+                print("⚠️ wkhtmltopdf non trouvé. PDF désactivé.")
+        except ImportError:
+            self.pdf_engine = None
+            print("⚠️ pdfkit non installé. PDF désactivé.")
+    
+    def _setup_playwright(self):
+        """Configuration pour playwright (environnement Render)"""
+        try:
+            from playwright.async_api import async_playwright
+            self.playwright_available = True
+            self.pdf_engine = 'playwright'
+            print("✅ PDF: utilisation de playwright (Render)")
+        except ImportError:
+            self.playwright_available = False
+            self.pdf_engine = None
+            print("⚠️ playwright non installé. PDF désactivé.")
     
     def _fig_to_base64(self, fig) -> Optional[str]:
         if not self.kaleido_available:
@@ -323,12 +356,9 @@ class PDFReportGenerator:
         recommendations = insights_data.get('recommendations', [])
         
         return {
-            # En-tête
             'filename': analysis_data.get('file_id', 'unknown'),
             'generated_at': datetime.now().strftime('%Y-%m-%d %H:%M:%S'),
             'execution_time': analysis_data.get('execution_time_seconds', 0),
-            
-            # Aperçu
             'rows': basic_info.get('rows', 0),
             'columns': basic_info.get('columns', 0),
             'memory_mb': basic_info.get('memory_usage_mb', 0),
@@ -338,8 +368,6 @@ class PDFReportGenerator:
             'datetime_cols': datetime_cols,
             'numeric_columns_list': numeric_columns_list,
             'categorical_columns_list': categorical_columns_list[:10],
-            
-            # Qualité
             'quality_score': quality_score_data.get('total_score', 0),
             'quality_grade': quality_score_data.get('grade', 'N/A'),
             'quality_interpretation': quality_score_data.get('interpretation', ''),
@@ -347,11 +375,7 @@ class PDFReportGenerator:
             'integrity_score': components.get('integrity', {}).get('score', 0),
             'consistency_score': components.get('consistency', {}).get('score', 0),
             'accuracy_score': components.get('accuracy', {}).get('score', 0),
-            
-            # Résumé
             'executive_summary': insights_data.get('executive_summary', ''),
-            
-            # Valeurs manquantes
             'total_cells': missing_summary.get('total_cells', 0),
             'total_missing': missing_summary.get('total_missing', 0),
             'missing_percentage': missing_summary.get('total_missing_percentage', 0),
@@ -359,22 +383,12 @@ class PDFReportGenerator:
             'rows_with_missing': missing_summary.get('rows_with_missing', 0),
             'rows_missing_percentage': missing_summary.get('rows_missing_percentage', 0),
             'missing_columns': missing_columns_simple,
-            
-            # Statistiques
             'statistics': stats_dict,
-            
-            # Corrélations
             'strong_correlations': strong_correlations[:10],
-            
-            # Normalité
             'normality': normality_results,
             'non_normal_count': len(normality_data.get('non_normal_columns', [])),
-            
-            # Outliers
             'outliers': outliers_results,
             'outliers_columns_count': len(outliers_data.get('columns_with_outliers', [])),
-            
-            # Analyses avancées
             'constant_columns': constant_columns,
             'quasi_constant_columns': quasi_constant_columns,
             'id_columns': id_columns,
@@ -382,15 +396,11 @@ class PDFReportGenerator:
             'highly_skewed_columns': highly_skewed_columns,
             'advanced_quality_score': advanced_summary.get('data_quality_score', 0),
             'advanced_problematic_count': advanced_summary.get('problematic_columns_count', 0),
-            
-            # Analyses catégorielles
             'categorical_columns': categorical_columns_found,
             'categorical_binary_columns': categorical_summary.get('binary_columns', []),
             'categorical_balanced_columns': categorical_summary.get('balanced_columns', []),
             'categorical_insights': categorical_insights[:5],
             'categorical_analysis': categorical_analysis.get('analysis', {}),
-            
-            # Détection ML
             'ml_target_column': target_column,
             'ml_problem_type': problem_type.get('message', 'Non déterminé'),
             'ml_problem_confidence': problem_type.get('confidence', 'N/A'),
@@ -402,23 +412,57 @@ class PDFReportGenerator:
             'ml_target_analysis': target_analysis,
             'ml_feature_analysis': feature_analysis,
             'ml_preprocessing_steps': preprocessing_steps[:10],
-            
-            # Insights
             'insights_list': insights_list[:10],
             'recommendations': recommendations[:8],
-            
-            # Graphiques
             'histograms': histograms,
             'boxplots': boxplots,
             'pearson_heatmap': pearson_heatmap,
             'missing_heatmap': missing_heatmap
         }
 
-    def generate_pdf(self, analysis_data: Dict[str, Any], df, output_path: str = None) -> bytes:
-        """Génère un PDF complet avec toutes les analyses"""
+    async def _generate_pdf_playwright(self, html_content: str, output_path: str = None) -> bytes:
+        """Génère un PDF avec Playwright (pour Render)"""
+        from playwright.async_api import async_playwright
         
-        if not self.config:
-            raise Exception("wkhtmltopdf non installé")
+        async with async_playwright() as p:
+            browser = await p.chromium.launch(headless=True)
+            page = await browser.new_page()
+            await page.set_content(html_content, wait_until="networkidle")
+            pdf_bytes = await page.pdf(format='A4', print_background=True)
+            await browser.close()
+            
+            if output_path:
+                with open(output_path, 'wb') as f:
+                    f.write(pdf_bytes)
+            
+            return pdf_bytes
+    
+    def _generate_pdf_pdfkit(self, html_content: str, output_path: str = None) -> bytes:
+        """Génère un PDF avec pdfkit (pour local)"""
+        import pdfkit
+        
+        options = {
+            'page-size': 'A4',
+            'margin-top': '15mm',
+            'margin-right': '10mm',
+            'margin-bottom': '15mm',
+            'margin-left': '10mm',
+            'encoding': "UTF-8",
+            'enable-local-file-access': None,
+        }
+        
+        if output_path:
+            pdfkit.from_string(html_content, output_path, options=options, configuration=self.config)
+            with open(output_path, 'rb') as f:
+                return f.read()
+        else:
+            return pdfkit.from_string(html_content, False, options=options, configuration=self.config)
+    
+    def generate_pdf(self, analysis_data: Dict[str, Any], df, output_path: str = None) -> bytes:
+        """Génère un PDF avec le moteur disponible"""
+        
+        if not self.pdf_engine:
+            raise Exception("Aucun moteur PDF disponible. Installez pdfkit ou playwright.")
         
         print("📊 Génération des graphiques pour le PDF...")
         
@@ -454,33 +498,11 @@ class PDFReportGenerator:
                 f.write(html_content)
             print(f"📄 HTML de débogage: {debug_path}")
         
-        # Options PDF
-        options = {
-            'page-size': 'A4',
-            'margin-top': '15mm',
-            'margin-right': '10mm',
-            'margin-bottom': '15mm',
-            'margin-left': '10mm',
-            'encoding': "UTF-8",
-            'enable-local-file-access': None,
-            'images': None,
-            'javascript-delay': 5000,
-            'load-error-handling': 'ignore',
-        }
-        
-        if output_path:
-            try:
-                pdfkit.from_string(html_content, output_path, options=options, configuration=self.config)
-                print("✅ PDF généré avec succès")
-            except Exception as e:
-                print(f"❌ ERREUR PDFKIT: {e}")
-                import traceback
-                traceback.print_exc()
-                raise
-            with open(output_path, 'rb') as f:
-                return f.read()
+        # Générer le PDF selon le moteur
+        if self.pdf_engine == 'playwright':
+            return asyncio.run(self._generate_pdf_playwright(html_content, output_path))
         else:
-            return pdfkit.from_string(html_content, False, options=options, configuration=self.config)
+            return self._generate_pdf_pdfkit(html_content, output_path)
     
     def generate_and_save(self, analysis_data: Dict[str, Any], df, file_id: str) -> str:
         """Génère et sauvegarde le PDF"""

@@ -1,7 +1,17 @@
 #!/bin/bash
-# Installation de wkhtmltopdf pour la génération PDF
+# Installer les dépendances système pour Playwright
 apt-get update
-apt-get install -y wkhtmltopdf
+apt-get install -y \
+    libnss3 \
+    libatk-bridge2.0-0 \
+    libdrm2 \
+    libxkbcommon0 \
+    libgbm1 \
+    libasound2
 
-# Lancement de l'application
+# Installer Playwright et Chromium
+pip install playwright
+playwright install chromium
+
+# Lancer l'application
 uvicorn app.main:app --host 0.0.0.0 --port $PORT
