@@ -171,7 +171,7 @@ class HTMLReportGenerator:
         # ============================================
         # 14. DEBUG - Afficher ce qui est passé au template
         # ============================================
-        print(f"📊 Données passées au template:")
+        print(f"Données passées au template:")
         print(f"   - statistics: {len(stats_dict)} colonnes")
         print(f"   - normality: {len(normality_results)} colonnes")
         print(f"   - outliers: {len(outliers_results)} colonnes")

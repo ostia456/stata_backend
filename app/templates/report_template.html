@@ -265,7 +265,7 @@
         <!-- HEADER -->
         <!-- ============================================ -->
         <div class="header">
-            <h1>📊 Rapport d'analyse des données</h1>
+            <h1> Rapport d'analyse des données</h1>
             <p>{{ filename }}</p>
             <div class="meta">
                 Généré le {{ generated_at }} | Temps d'exécution: {{ execution_time }} secondes
@@ -276,7 +276,7 @@
         <!-- PARTIE 1: QUALITÉ DES DONNÉES -->
         <!-- ============================================ -->
         <div class="card">
-            <h2>⭐ Score de qualité des données</h2>
+            <h2> Score de qualité des données</h2>
             <div class="grid-2">
                 <div class="stat-box">
                     <div class="stat-number">{{ quality_score }}/100</div>
@@ -292,7 +292,7 @@
             </div>
             <p style="margin-top: 15px;">{{ quality_interpretation }}</p>
             
-            <h3>📊 Détail des composantes</h3>
+            <h3> Détail des composantes</h3>
             <div class="grid-4">
                 <div class="stat-box">
                     <div class="stat-number">{{ completeness_score }}</div>
@@ -317,7 +317,7 @@
         <!-- PARTIE 2: APERÇU DU DATASET -->
         <!-- ============================================ -->
         <div class="card">
-            <h2>📈 Aperçu du dataset</h2>
+            <h2> Aperçu du dataset</h2>
             <div class="grid-3">
                 <div class="stat-box">
                     <div class="stat-number">{{ rows }}</div>
@@ -333,7 +333,7 @@
                 </div>
             </div>
             
-            <h3>📋 Types de colonnes</h3>
+            <h3> Types de colonnes</h3>
             <div class="grid-4">
                 <div class="stat-box">
                     <div class="stat-number">{{ numeric_cols }}</div>
@@ -353,7 +353,7 @@
                 </div>
             </div>
             
-            <h3>🔍 Liste des colonnes par type</h3>
+            <h3> Liste des colonnes par type</h3>
             <div class="grid-2">
                 <div>
                     <strong>Numériques:</strong>
@@ -378,7 +378,7 @@
         <!-- PARTIE 3: RÉSUMÉ EXÉCUTIF -->
         <!-- ============================================ -->
         <div class="card">
-            <h2>💡 Résumé exécutif</h2>
+            <h2> Résumé exécutif</h2>
             <div class="insight">
                 {{ executive_summary }}
             </div>
@@ -388,7 +388,7 @@
         <!-- PARTIE 4: VALEURS MANQUANTES -->
         <!-- ============================================ -->
         <div class="card">
-            <h2>❌ Analyse des valeurs manquantes</h2>
+            <h2> Analyse des valeurs manquantes</h2>
             <div class="grid-2">
                 <div>
                     <h3>Statistiques globales</h3>
@@ -429,7 +429,7 @@
         <!-- PARTIE 5: STATISTIQUES DESCRIPTIVES -->
         <!-- ============================================ -->
         <div class="card">
-            <h2>📊 Statistiques descriptives</h2>
+            <h2>Statistiques descriptives</h2>
             <table>
                 <thead>
                     <tr>
@@ -462,7 +462,7 @@
         <!-- PARTIE 6: CORRÉLATIONS -->
         <!-- ============================================ -->
         <div class="card">
-            <h2>🔗 Corrélations</h2>
+            <h2>Corrélations</h2>
             
             <h3>Corrélations fortes détectées</h3>
             {% if strong_correlations %}
@@ -486,7 +486,7 @@
         <!-- PARTIE 7: TESTS DE NORMALITÉ -->
         <!-- ============================================ -->
         <div class="card">
-            <h2>📐 Tests de normalité (Shapiro-Wilk)</h2>
+            <h2> Tests de normalité (Shapiro-Wilk)</h2>
             <table>
                 <thead>
                     <tr>
@@ -504,9 +504,9 @@
                         <td>{{ "%.6f"|format(result.p_value) if result.p_value else 'N/A' }}</td>
                         <td>
                             {% if result.is_normal %}
-                                <span class="badge badge-success">✅ Normale</span>
+                                <span class="badge badge-success"> Normale</span>
                             {% else %}
-                                <span class="badge badge-danger">❌ Non normale</span>
+                                <span class="badge badge-danger"> Non normale</span>
                             {% endif %}
                         </td>
                         <td>{{ result.interpretation if result.interpretation else '-' }}</td>
@@ -521,7 +521,7 @@
         <!-- PARTIE 8: DÉTECTION D'OUTLIERS -->
         <!-- ============================================ -->
         <div class="card">
-            <h2>⚠️ Détection d'outliers</h2>
+            <h2> Détection d'outliers</h2>
             <table>
                 <thead>
                     <tr>
@@ -558,7 +558,7 @@
         <!-- PARTIE 9: GRAPHIQUES ET VISUALISATIONS -->
         <!-- ============================================ -->
         <div class="card">
-            <h2>📈 Visualisations</h2>
+            <h2> Visualisations</h2>
             
             {% if histograms %}
             <h3>Histogrammes des variables numériques</h3>
@@ -593,21 +593,21 @@
         <!-- PARTIE 10: INSIGHTS AUTOMATIQUES -->
         <!-- ============================================ -->
         <div class="card">
-            <h2>💡 Insights automatiques</h2>
+            <h2> Insights automatiques</h2>
             
-            <h3>⚠️ Problèmes détectés</h3>
+            <h3> Problèmes détectés</h3>
             {% for insight in missing_insights %}
                 <div class="insight {% if 'critique' in insight or 'supprimer' in insight %}insight-critical{% elif 'recommandé' in insight %}insight-warning{% endif %}">
                     {{ insight }}
                 </div>
             {% endfor %}
             
-            <h3>📊 Distribution</h3>
+            <h3>Distribution</h3>
             {% for insight in numeric_insights %}
                 <div class="insight">{{ insight }}</div>
             {% endfor %}
             
-            <h3>🔗 Relations</h3>
+            <h3> Relations</h3>
             {% for insight in correlation_insights %}
                 <div class="insight">{{ insight }}</div>
             {% endfor %}
@@ -617,7 +617,7 @@
         <!-- PARTIE 11: RECOMMANDATIONS -->
         <!-- ============================================ -->
         <div class="card">
-            <h2>🎯 Recommandations</h2>
+            <h2> Recommandations</h2>
             <ul style="margin-left: 20px;">
                 {% for rec in recommendations %}
                 <li style="margin-bottom: 10px;">
@@ -641,7 +641,7 @@
         <!-- PARTIE 12: TABLEAU DE BORD RÉCAPITULATIF -->
         <!-- ============================================ -->
         <div class="card">
-            <h2>📋 Tableau de bord récapitulatif</h2>
+            <h2> Tableau de bord récapitulatif</h2>
             <div class="grid-4">
                 <div class="stat-box">
                     <div class="stat-number">{{ rows }}</div>
@@ -662,6 +662,170 @@
             </div>
         </div>
         
+                <!-- ============================================ -->
+        <!-- PARTIE 11: DÉTECTION ML ET RECOMMANDATIONS -->
+        <!-- ============================================ -->
+        <div class="card">
+            <h2> Détection Machine Learning</h2>
+            
+            <!-- Résumé de la détection -->
+            <div class="grid-2" style="margin-bottom: 20px;">
+                <div class="stat-box" style="background: #e0e7ff;">
+                    <div class="stat-number">{{ ml_target_column|default('Non détectée') }}</div>
+                    <div class="stat-label">Colonne cible</div>
+                </div>
+                <div class="stat-box" style="background: #e0e7ff;">
+                    <div class="stat-number">{{ ml_problem_type|default('Non déterminé') }}</div>
+                    <div class="stat-label">Type de problème ML</div>
+                </div>
+            </div>
+            
+            <!-- Modèles recommandés -->
+            {% if ml_model_suggestions %}
+            <h3> Modèles recommandés</h3>
+            <div style="display: flex; flex-wrap: wrap; gap: 10px; margin: 15px 0;">
+                {% for model in ml_model_suggestions[:5] %}
+                <span style="background: #e0e7ff; color: #2563eb; padding: 6px 14px; border-radius: 20px; font-size: 0.85em;">
+                    {{ model }}
+                </span>
+                {% endfor %}
+            </div>
+            {% endif %}
+            
+            <!-- Métriques d'évaluation suggérées -->
+            {% if ml_evaluation_metrics %}
+            <h3> Métriques d'évaluation</h3>
+            <div style="display: flex; flex-wrap: wrap; gap: 8px; margin: 10px 0;">
+                {% for metric in ml_evaluation_metrics[:5] %}
+                <span style="background: #f3f4f6; padding: 4px 12px; border-radius: 15px; font-size: 0.8em;">{{ metric }}</span>
+                {% endfor %}
+            </div>
+            {% endif %}
+            
+            <!-- Niveau de préparation -->
+            {% if ml_ready_level %}
+            <div class="progress-bar" style="margin: 15px 0;">
+                <div class="progress-fill" style="width: 
+                    {% if ml_ready_level == 'high' %}85
+                    {% elif ml_ready_level == 'medium' %}60
+                    {% else %}35{% endif %}%; 
+                    background: {% if ml_ready_level == 'high' %}#10b981
+                    {% elif ml_ready_level == 'medium' %}#f59e0b
+                    {% else %}#ef4444{% endif %};">
+                </div>
+            </div>
+            <p style="text-align: center; margin-top: 5px;">
+                Niveau de préparation : 
+                <strong>
+                    {% if ml_ready_level == 'high' %} Prêt pour le ML
+                    {% elif ml_ready_level == 'medium' %} Nettoyage léger requis
+                    {% else %} Nettoyage important requis{% endif %}
+                </strong>
+            </p>
+            {% endif %}
+            
+            <!-- Problèmes détectés pour le ML -->
+            {% if ml_issues %}
+            <div class="alert alert-warning" style="margin-top: 15px;">
+                <strong>Problèmes à résoudre avant modélisation :</strong>
+                <ul style="margin-top: 8px; margin-left: 20px;">
+                    {% for issue in ml_issues[:5] %}
+                    <li>{{ issue }}</li>
+                    {% endfor %}
+                </ul>
+            </div>
+            {% endif %}
+            
+            <!-- Recommandations de prétraitement ML -->
+            {% if ml_preprocessing_steps %}
+            <h3> Prétraitement recommandé</h3>
+            <ol style="margin-left: 20px; line-height: 1.8;">
+                {% for step in ml_preprocessing_steps[:6] %}
+                <li>
+                    <strong>{{ step.action }}</strong>
+                    {% if step.method %}
+                    <span style="background: #e0e7ff; color: #2563eb; padding: 2px 8px; border-radius: 12px; font-size: 0.75em; margin-left: 8px;">{{ step.method }}</span>
+                    {% endif %}
+                    <br>
+                    <small style="color: #666;">{{ step.reason }}</small>
+                </li>
+                {% endfor %}
+            </ol>
+            {% endif %}
+            
+            <!-- Recommandations ML additionnelles -->
+            {% if ml_recommendations %}
+            <h3> Recommandations</h3>
+            <ul style="margin-left: 20px;">
+                {% for rec in ml_recommendations[:5] %}
+                <li style="margin: 8px 0;">
+                    <strong>{{ rec.action }}</strong> - {{ rec.reason }}
+                    {% if rec.priority == 'high' %}
+                    <span class="badge badge-danger">Prioritaire</span>
+                    {% endif %}
+                </li>
+                {% endfor %}
+            </ul>
+            {% endif %}
+            
+            <!-- Analyse de la cible -->
+            {% if ml_target_analysis %}
+            <h3> Analyse de la cible</h3>
+            <table style="width: 100%; font-size: 0.85em;">
+                <tbody>
+                    <tr><td style="width: 40%;"><strong>Valeurs uniques :</strong></td><td>{{ ml_target_analysis.unique_count }}</td></tr>
+                    {% if ml_target_analysis.min is defined %}
+                    <tr><td><strong>Min / Max :</strong></td><td>{{ ml_target_analysis.min }} / {{ ml_target_analysis.max }}</td></tr>
+                    <tr><td><strong>Moyenne / Médiane :</strong></td><td>{{ ml_target_analysis.mean }} / {{ ml_target_analysis.median }}</td></tr>
+                    {% endif %}
+                    {% if ml_target_analysis.is_balanced is defined %}
+                    <tr><td><strong>Classes équilibrées :</strong></td><td>{% if ml_target_analysis.is_balanced %}✅ Oui{% else %}⚠️ Non{% endif %}</td></tr>
+                    {% endif %}
+                </tbody>
+            </table>
+            {% endif %}
+            
+            <!-- Checklist de préparation ML -->
+            <h3> Checklist de préparation</h3>
+            <div style="background: #f8fafc; border-radius: 8px; padding: 12px; margin-top: 10px;">
+                <table style="width: 100%; font-size: 0.85em;">
+                    <thead>
+                        <tr style="background: #e2e8f0;">
+                            <th style="padding: 8px;">Étape</th>
+                            <th style="padding: 8px;">Action</th>
+                            <th style="padding: 8px;">Statut</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td style="padding: 8px;">1</td>
+                            <td style="padding: 8px;">Gérer les valeurs manquantes</td>
+                            <td style="padding: 8px;">{% if missing_columns %} À faire{% else %} OK{% endif %}</td>
+                        </tr>
+                        <tr>
+                            <td style="padding: 8px;">2</td>
+                            <td style="padding: 8px;">Encoder les variables catégorielles</td>
+                            <td style="padding: 8px;">{% if categorical_columns %} À faire{% else %} OK{% endif %}</td>
+                        </tr>
+                        <tr>
+                            <td style="padding: 8px;">3</td>
+                            <td style="padding: 8px;">Standardiser les variables numériques</td>
+                            <td style="padding: 8px;">Recommandé</td>
+                        </tr>
+                        <tr>
+                            <td style="padding: 8px;">4</td>
+                            <td style="padding: 8px;">Supprimer les colonnes identifiant</td>
+                            <td style="padding: 8px;">{% if id_columns %} À faire{% else %} OK{% endif %}</td>
+                        </tr>
+                        <tr>
+                            <td style="padding: 8px;">5</td>
+                            <td style="padding: 8px;">Séparer les données (Train/Test)</td>
+                            <td style="padding: 8px;"> À faire</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
         <!-- ============================================ -->
         <!-- FOOTER -->
         <!-- ============================================ -->
